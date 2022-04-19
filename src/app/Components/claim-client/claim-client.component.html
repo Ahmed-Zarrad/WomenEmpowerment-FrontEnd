@@ -1,0 +1,28 @@
+<h3>Add Claim</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Title</label>
+      <input type="text" class="form-control" required placeholder="Title Claim" id="titleClaim" required [(ngModel)]="claim.titleClaim" name="titleClaim">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Description</label>
+      <input type="text" class="form-control" required placeholder="Description Claim" id="descriptionClaim" required [(ngModel)]="claim.descriptionClaim" name="descriptionClaim">
+    </div>
+
+  
+
+    <div class="form-group">
+      <label for="name">Date Claim</label>
+      <input type="date" class="form-control" id="dateClaim" required [(ngModel)]="claim.dateClaim" name="dateClaim">
+    </div>
+
+    <button type="submit" class="btn btn-success">Add Claim</button>
+    <button  class="btn btn-dark">Update Claim</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You added successfully!</h4>
+</div>

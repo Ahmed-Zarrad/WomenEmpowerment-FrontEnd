@@ -1,0 +1,275 @@
+
+
+ 
+<!--  <img src="../assets/img/back2.png">  -->
+    
+      
+  
+
+
+
+<!-- INTERFACE D'ADMINSITRATEUR -->
+<div class="titre">
+    <h3>Welcome to department manager shelf </h3>
+</div>
+ 
+
+    <body>
+        <div class="container">
+            <div class="row">
+        
+            <button type="button" (click)="Viewdepartment()" id="submitButton" class="buttony">Department Database </button>
+            <button type="button" (click)="AddDepatmentshowdiv()"  id="submitButton" class="buttony">ADD NEW department</button>
+            <button type="button"  id="submitButton" class="buttony"  routerLink="/Client/department/virtual_visit">check your Depatment </button>
+           <!-- adding a new department-->
+           
+           </div>
+
+
+
+           
+ 
+
+        </div>
+        
+           
+
+
+           <!--add dep-->
+           
+           <div class="wrapper">
+            <div *ngIf="show">
+           <div class="title">
+           
+           ADD a  new shelf</div>
+            <!--adding a department with success notification-->
+           <div *ngIf="alert" class="alert alert-warning alert-dismissible fade show" role="alert">
+           <strong></strong> department added with success !
+           <button (click)="closealert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+           </button>
+           </div>
+                              <!--end notification-->
+           
+           <form  #F="ngForm"  action="#">
+           <div class="field">
+           
+           
+           <input type="text" required placeholder="Title Of Department" #t="ngModel" id="titleDepartment" name="titleDepartment" [(ngModel)]="department.nameDepartment">
+           <div class="alert alert-danger" *ngIf="t.invalid && t.touched" >
+           <div *ngIf="t.errors.required">Title Is Obilgatory</div>
+           <div *ngIf="t.errors.minlength">Invalid Title</div>
+           </div>
+           
+           </div>
+           
+           
+           
+           
+           <div class="field">
+           
+            <select class="form-control" aria-label="Default select example" placeholder="Choose Your Sexe" type="text" name="sexe"
+            ngModel [(ngModel)]="department.typeDepartment">
+      <option *ngFor="let s of Keys()">{{s}}</option>
+    </select>
+           </div>
+           
+           
+
+
+
+
+
+           
+           
+           <div class="field">
+           
+           <label></label>
+           <input type="number" required placeholder="capacityDepartment" #q="ngModel" pattern="[1-9][0-9]" name="capacityDepartment"[(ngModel)]="department.capacityDepartment">
+           <div class="alert alert-danger" *ngIf="q.invalid && q.touched" >
+           <div *ngIf="q.errors.required">Quantity Is Obilgatory</div>
+           <div *ngIf="q.errors.minlength">Invalid Quantity</div>
+           </div>
+           
+           </div>
+
+           <label></label>
+    <input type="file"  name="file"[(ngModel)]="department.fileName"> <label>virtual visit photo</label><br>
+
+           
+           
+           
+           
+
+    
+           
+           
+           <div class="field">
+           <button type="button" [disabled]="F.invalid" id="adddepartment" (click)="adddepartment()" class="btn btn-success">Add new Department</button>
+           
+           </div>
+           
+           
+           </form>
+       
+           </div>
+           
+           
+
+<!-- update  department-->
+
+
+<div *ngIf="updatedepInt" class="container" style="padding-top: 100;">
+    <div class="wrapper">
+
+
+
+<div class="title">
+           
+    UPDATE Product</div>
+  
+    <form #H="ngForm">
+      <fieldset>
+        <div class="field">
+          
+          <input type="text" required placeholder="Title Of Product" #t="ngModel" id="titleProduct" name="titleProduct"
+            [(ngModel)]="depToUpdate.nameDepartment">
+          <!-- <div class="alert alert-danger" *ngIf="t.invalid && t.touched" >
+          <div *ngIf="t.errors.required">Title Is Obilgatory</div>
+      </div> -->
+  
+        </div>
+  
+        <div class="field">
+        
+          <input type="text" required placeholder="descriptionProduct" #d="ngModel" id="descriptionProduct"
+            name="descriptionProduct" [(ngModel)]="depToUpdate.typeDepartment">
+          <!-- <div class="alert alert-danger" *ngIf="d.invalid && d.touched" >
+          <div *ngIf="d.errors.required">Description Is Obilgatory</div>
+          <div *ngIf="d.errors.minlength">Invalid Description</div>
+      </div> -->
+        </div>
+  
+  
+        <div class="field">
+        
+          <input type="number" required placeholder="quantityProduct" #q="ngModel" pattern="[1-9][0-9]"
+            name="quantityProduct" [(ngModel)]="depToUpdate.capacityDepartment">
+          <!-- <div class="alert alert-danger" *ngIf="q.invalid && q.touched" >
+          <div *ngIf="q.errors.required">Quantity Is Obilgatory</div>
+          <div *ngIf="q.errors.minlength">Invalid Quantity</div>
+      </div> -->
+        </div>
+  
+  
+  
+  
+        <button type="button" id="adddepartment" (click)="updatedep(depToUpdate.idDepartment, depToUpdate)"
+          class="btn btn-success">Update
+          Product</button>
+      </fieldset>
+    </form>
+    <br>
+  
+  
+  </div>
+
+
+
+
+
+
+
+    </div>
+    
+
+
+
+
+
+
+           </div>
+    
+
+ 
+
+
+        
+
+
+
+
+
+
+<div *ngIf="showdepartments">
+
+
+
+    
+
+
+<!-- AFFICHAGE DES PRODUITS AVEC OPTION DELETE-->
+
+<div   >
+
+
+
+
+<table class="styled-table">
+<thead>
+<tr>
+<th>Department Id</th>
+<th>Name</th>
+<th>Type</th>
+<th>Capacity</th>
+<th>visite v</th>
+<th>Edit</th>
+
+</tr>
+</thead>
+<tbody>
+<tr *ngFor="let d of listDepartment">
+<td><h6 class="card-title">{{d.idDepartment}}</h6></td>
+<td><h6 class="card-title">{{d.nameDepartment}}</h6></td>
+<td><h6 class="cartd-title">{{d.typeDepartment}}</h6></td>
+<td><h6 class="cartd-title">{{d.capacityDepartment}}</h6></td>
+
+<td><img src="{{'http://localhost:9091/SpringMVC/servlet/department/'+d.idDepartment}}" height="200px" width="200px"  class="card-img-top" alt="..."></td>
+
+<td>
+    <div class="field">
+
+      
+        <button (click)="updatedepInterface(d.idDepartment,d)" class="btn btn-info" style="margin-left: 10px"   type="button" >     Update </button>
+
+        <button (click)="deleteDepartment(d.idDepartment)" class="btn btn-info" style="margin-left: 10px"   type="button" > DELETE </button>
+        
+        </div>
+</td>
+
+
+</tr>
+
+
+</tbody>
+</table>
+
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+</body>
+
+
+
+
+

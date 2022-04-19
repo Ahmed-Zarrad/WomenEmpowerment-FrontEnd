@@ -1,0 +1,65 @@
+
+               
+           
+
+                <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+<div class="col-sm-12 col-md-12 col-lg-12">
+    
+    <div class="product-content product-wrap clearfix product-deatil">
+        <div class="row">
+            <div class="col-md-5 col-sm-12 col-xs-12">
+                <div class="product-image">
+                    <div id="myCarousel-2" class="carousel slide">
+                       
+                        <div class="carousel-inner">
+                       
+                            <div class="item active">
+                              <img  style="margin-left: 20%;" src="{{'http://localhost:9091/SpringMVC/servlet/Imgarticles/'+id}}" class="img-fluid z-depth-1" width="350" height="500">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-md-offset-1 col-sm-12 col-xs-12">
+                <h2 class="name">
+                   {{title}}
+                    
+                    
+                </h2>
+                <hr />
+                <h3 class="price-container">
+                   {{price}} Dt 
+                    <small>*includes tax</small>
+                </h3>
+                <div class="certified">
+                    <ul>
+                       <li>{{quantity}} in stock </li>
+                        <li>
+                            <a href="javascript:void(0);">Certified<span>Quality Assured</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <hr />
+                <ul id="myTab" class="nav nav-pills">
+                  <li class="active"><a href="#more-information" data-toggle="tab" class="no-margin">{{description}} </a></li>
+              </ul>
+                <hr />
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <a href="javascript:void(0);" class="btn btn-success btn-lg">Add to cart   {{price}} DT</a>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class="btn-group pull-right">
+
+                            <button class="btn btn-white btn-default"><i class="fa fa-envelope"></i> Contact Seller</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

@@ -7,7 +7,7 @@
 footer{
 	float:left;
 	width:100%;
-	background-image:url(/assets/images/footer-bg.png);
+	background-image:url("~src/assets/images/footer-bg.png");
 	background-size:cover;
 	position:relative;
 	padding:50px 0px;

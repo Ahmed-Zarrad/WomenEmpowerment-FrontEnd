@@ -57,4 +57,7 @@ small{
 button{
     width:150px;
     font-weight:100;
+  font-size: 15px;
+  text-transform: none;
+  margin-bottom: 15px;
 }

@@ -16,37 +16,38 @@ const httpOptions = {
 })
 export class UserService {
 
-  addUserURL = "http://localhost:9091/SpringMVC/servlet/add-user";
-  ajoutUserURL = "http://localhost:9091/SpringMVC/servlet/ajouter-user";
-  deleteUserURL = "http://localhost:9091/SpringMVC/servlet";
-  updateUserURL = "http://localhost:9091/SpringMVC/servlet";
-  getAllUserURL = "http://localhost:9091/SpringMVC/servlet/retrieve-all-user";
-  getByIdUserURL = "http://localhost:9091/SpringMVC/servlet";
-  getByPointUserURL = "http://localhost:9091/SpringMVC/servlet/retrieve-user-by-point";
-  getByUsernameUserURL = "http://localhost:9091/SpringMVC/servlet";
-  getByStateUserURL = "http://localhost:9091/SpringMVC/servlet/retrieve-user-by-state";
-  getByAdressUserURL = "http://localhost:9091/SpringMVC/servlet/retrieve-user-by-adress";
-  getByDateUserURL = "http://localhost:9091/SpringMVC/servlet/retrieve-user-by-date";
-  getBySexeUserURL = "http://localhost:9091/SpringMVC/servlet/retrieve-user-by-sexe";
-  getByEmailUserURL = "http://localhost:9091/SpringMVC/servlet/retrieve-user-by-email";
-  getBySalaireUserURL = "http://localhost:9091/SpringMVC/servlet/retrieve-user-by-salaire";
-  getBySalairegtUserURL = "http://localhost:9091/SpringMVC/servlet/retrieve-user-by-salairegt";
-  getBySalaireltUserURL = "http://localhost:9091/SpringMVC/servlet/retrieve-user-by-salairelt";
-  getByRoleUserURL = "http://localhost:9091/SpringMVC/servlet/retrieve-user-by-role";
-  getAllNamesUserURL = "http://localhost:9091/SpringMVC/servlet/users-names";
-  getActivateUserURL = "http://localhost:9091/SpringMVC/servlet/activate-user";
-  getDesactivateUserURL = "http://localhost:9091/SpringMVC/servlet/desactivate-User";
-  getCountUserURL = "http://localhost:9091/SpringMVC/servlet/count-user";
-  findActivateUserURL = "http://localhost:9091/SpringMVC/servlet/findActivatedUser";
-  getDisabledUserURL = "http://localhost:9091/SpringMVC/servlet/findDisabledUser";
-  getMoySalaireUserURL = "http://localhost:9091/SpringMVC/servlet/moy-salaire";
-  getSommeSalaireUserURL = "http://localhost:9091/SpringMVC/servlet/somme-salaire";
-  getMaxSalaireUserURL = "http://localhost:9091/SpringMVC/servlet/max-salaire";
-  getMinAgeUserURL = "http://localhost:9091/SpringMVC/servlet/min-age";
+  addUserURL = 'http://localhost:9091/SpringMVC/servlet/add-user';
+  ajoutUserURL = 'http://localhost:9091/SpringMVC/servlet/ajouter-user';
+  deleteUserURL = 'http://localhost:9091/SpringMVC/servlet';
+  updateUserURL = 'http://localhost:9091/SpringMVC/servlet';
+  getAllUserURL = 'http://localhost:9091/SpringMVC/servlet/retrieve-all-user';
+  getByIdUserURL = 'http://localhost:9091/SpringMVC/servlet';
+  getByPointUserURL = 'http://localhost:9091/SpringMVC/servlet/retrieve-user-by-point';
+  getByUsernameUserURL = 'http://localhost:9091/SpringMVC/servlet';
+  getByStateUserURL = 'http://localhost:9091/SpringMVC/servlet/retrieve-user-by-state';
+  getByAdressUserURL = 'http://localhost:9091/SpringMVC/servlet/retrieve-user-by-adress';
+  getByDateUserURL = 'http://localhost:9091/SpringMVC/servlet/retrieve-user-by-date';
+  getBySexeUserURL = 'http://localhost:9091/SpringMVC/servlet/retrieve-user-by-sexe';
+  getByEmailUserURL = 'http://localhost:9091/SpringMVC/servlet/retrieve-user-by-email';
+  getBySalaireUserURL = 'http://localhost:9091/SpringMVC/servlet/retrieve-user-by-salaire';
+  getBySalairegtUserURL = 'http://localhost:9091/SpringMVC/servlet/retrieve-user-by-salairegt';
+  getBySalaireltUserURL = 'http://localhost:9091/SpringMVC/servlet/retrieve-user-by-salairelt';
+  getByRoleUserURL = 'http://localhost:9091/SpringMVC/servlet/retrieve-user-by-role';
+  getAllNamesUserURL = 'http://localhost:9091/SpringMVC/servlet/users-names';
+  getActivateUserURL = 'http://localhost:9091/SpringMVC/servlet/activate-user';
+  getDesactivateUserURL = 'http://localhost:9091/SpringMVC/servlet/desactivate-User';
+  getCountUserURL = 'http://localhost:9091/SpringMVC/servlet/count-user';
+  findActivateUserURL = 'http://localhost:9091/SpringMVC/servlet/findActivatedUser';
+  getDisabledUserURL = 'http://localhost:9091/SpringMVC/servlet/findDisabledUser';
+  getMoySalaireUserURL = 'http://localhost:9091/SpringMVC/servlet/moy-salaire';
+  getSommeSalaireUserURL = 'http://localhost:9091/SpringMVC/servlet/somme-salaire';
+  getMaxSalaireUserURL = 'http://localhost:9091/SpringMVC/servlet/max-salaire';
+  getMinAgeUserURL = 'http://localhost:9091/SpringMVC/servlet/min-age';
 
   constructor(private userhttp: HttpClient, private router: Router) {
   }
 
+  // tslint:disable-next-line:typedef
   addUser(createaccount: CreateAccount) {
     return this.userhttp.post<JwtResponse>(this.addUserURL, createaccount, httpOptions)
       .pipe(data => {
@@ -57,7 +58,7 @@ export class UserService {
   ajouterUser(user: User): Observable<any> {
     return this.userhttp.post<JwtResponse>(this.ajoutUserURL, user).pipe(data => {
       return data;
-    })
+    });
   }
 
   deleteUser(idUser: any): Observable<any> {
@@ -160,11 +161,14 @@ export class UserService {
     return this.userhttp.get(this.getMinAgeUserURL);
   }
 
+  // tslint:disable-next-line:typedef
   forgotPassword(email: string) {
     return this.userhttp.get('http://localhost:9091/SpringMVC/servlet/sendme/' + email);
   }
 
+  // tslint:disable-next-line:typedef
   updatePassword(email: string, password: string, confirmPassword: string) {
+    // tslint:disable-next-line:max-line-length
     return this.userhttp.put('http://localhost:9091/SpringMVC/servlet/updatepassword/' + email + '/' + password + '/' + confirmPassword, { responseType: 'text' });
   }
 }

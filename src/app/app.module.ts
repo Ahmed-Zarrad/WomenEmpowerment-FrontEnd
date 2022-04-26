@@ -76,6 +76,7 @@ import { CommentStatsComponent } from './Components/comment-stats/comment-stats.
 import { PdfComponent } from './Components/pdf/pdf.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { SortedComponentComponent } from './Components/sorted-component/sorted-component.component';
+import { JobOffreComponent } from './components/job-offre/job-offre.component';
 
 
 
@@ -149,6 +150,7 @@ import { SortedComponentComponent } from './Components/sorted-component/sorted-c
     ProductsViewComponent,
     PdfComponent,
     SortedComponentComponent,
+    JobOffreComponent,
   ],
 
   imports: [

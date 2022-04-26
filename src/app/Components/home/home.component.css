@@ -110,7 +110,7 @@ header{
 */
 .header-2 .nav-container{
 	background-color:#fff;
-	
+
 }
 .header-2 .navigation ul li a{
 	color:#7f7f7f;
@@ -281,7 +281,7 @@ header{
 }
 .navigation ul li.last ul{
 	left: auto;
-	right: 0px;	
+	right: 0px;
 }
 .navigation ul li.last ul ul{
 	left: auto;
@@ -303,7 +303,7 @@ header{
 	float:left;
 	width: 100%;
 	min-width:200px;
-	
+
 }
 .navigation ul ul li a{
 	color: #fff;
@@ -486,7 +486,7 @@ header{
 	font-size:60px;
 	color:#fff;
 }
-.main-banner-2 .bxslider .caption-2 p{	
+.main-banner-2 .bxslider .caption-2 p{
 	font-size:22px;
 	margin-bottom:20px;
 	color:#fff;
@@ -549,7 +549,7 @@ header{
 	width:100%;
 }
 .heading.heading-4{
-	margin-top:-2px;	
+	margin-top:-2px;
 }
 .gray-bg{
 	background-color:ghostwhite;
@@ -636,7 +636,7 @@ header{
 	text-transform:uppercase;
 	color:#333333;
 }
-.kf-services p{	
+.kf-services p{
 	line-height:24px;
 	font-size: 16px;
 }
@@ -652,7 +652,7 @@ header{
 ===========================================
 */
 .causes-section{
-	background-image:url(/assets/images/causes-bg.jpg);
+	background-image:url("~src/assets/images/causes-bg.jpg");
 	position:relative;
 	background-size: cover;
 	background-attachment:fixed;
@@ -805,7 +805,7 @@ header{
 	display:inline-block;
 	color:#606666;
 	font-family: "Roboto",sans-serif;
-	
+
 }
 .kode-fund-raised .progress{
 	float:left;
@@ -816,7 +816,7 @@ header{
 }
 .kode-fund-raised  .progress-bar{
 	line-height:19px;
-	
+
 }
 .kode-skills .progress-bar{
 	border-radius:10px;
@@ -866,7 +866,7 @@ header{
 	width:70%;
 }
 .kode-cause-list.kode-list-view .fund-meta{
-	
+
 }
 .share-cause{
 	float:right;
@@ -933,10 +933,10 @@ header{
 	content:"";
 	z-index:1;
 	opacity:0.8;
-	
+
 }
 .parallax-bg-count{
-	background:url(/assets/images/causes-bg.jpg);
+	background:url("~src/assets/images/causes-bg.jpg");
 	background-size:cover;
 	position:relative;
 	background-attachment:fixed;
@@ -956,7 +956,7 @@ header{
 	top: 0px;
 	height: 100%;
 	width: 1px;
-	background-color: rgba(255,255,255,0.5); 
+	background-color: rgba(255,255,255,0.5);
 
 }
 .progress-section .row div:first-child .count-up:before{
@@ -978,7 +978,7 @@ header{
 ===========================================
 */
 .video-section{
-	background-image:url(/assets/images/video-bg.jpg);
+	background-image:url("~src/assets/images/video-bg.jpg");
 	background-size:cover;
 	background-attachment:fixed;
 }
@@ -1133,7 +1133,7 @@ header{
 	transform:scale(0);
 	-moz-transform:scale(0);
 	-webkit-transform:scale(0)
-	
+
 }
 .kode-event-list-2:hover  a:before, .kode-blog-list:hover .kode-thumb a:before, .kode-cause-list:hover .kode-thumb a:before, .kode-gallery-item:hover .kode-thumb a:before{
 	transform:scale(1);
@@ -1169,7 +1169,7 @@ header{
 	font-size:14px;
 	font-weight:normal;
 	border-radius:3px;
-	padding:5px 20px;	
+	padding:5px 20px;
 }
 
 /*
@@ -1178,7 +1178,7 @@ header{
 ===========================================
 */
 .kode-team-section{
-	background-image:url(/assets/images/team-bg.png);
+	background-image:url("~src/assets/images/team-bg.png");
 }
 .kode-team-member{
 	float:left;
@@ -1209,7 +1209,7 @@ header{
 	outline:1px solid #333;
 	outline-offset:-10px;
 	border:solid 10px transparent;
-	
+
 }
 .kode-team-member:hover a:before{
 	border:solid 10px #fff;
@@ -1350,7 +1350,7 @@ header{
 	font-size:30px
 }
 .kode-blog-list .kode-text p{
-	font-size:16px;	
+	font-size:16px;
 	margin-bottom:15px;
 }
 .kode-blog-list .kode-text h4{
@@ -1388,7 +1388,7 @@ header{
 	left:0px;
 	right:0px;
 	margin:auto;
-	
+
 }
 .kode-blog-list i, .kode-blog-detail .kode-thumb i{
 	color:#fff;
@@ -1469,7 +1469,7 @@ header{
 footer{
 	float:left;
 	width:100%;
-	background-image:url(/assets/images/footer-bg.png);
+	background-image:url("~src/assets/images/footer-bg.png");
 	background-size:cover;
 	position:relative;
 	padding:50px 0px;
@@ -1542,7 +1542,7 @@ footer .container{
 	float:left;
 	width:100%;
 	padding:130px 0 20px 0;
-	background-image:url(/assets/images/inner-bg.png);
+	background-image:url("~src/assets/images/inner-bg.png");
 	background-size:cover;
 	min-height:260px;
 	position:relative;
@@ -1596,7 +1596,7 @@ section.kode-testimonials{
 	text-align:center;
 }
 .kode-testimonials-cover p{
-	font-size:22px;	
+	font-size:22px;
 }
 .kode-testimonials-cover p.title{
 	text-transform:uppercase;
@@ -1686,7 +1686,7 @@ section.kode-testimonials{
 	float:left;
 	width:100%;
 	position:relative;
-	
+
 }
 .kode-gallery-item .kode-thumb img{
 	width:100%;
@@ -1699,7 +1699,7 @@ section.kode-testimonials{
 	width:100%;
 	padding:15px 20px;
 	position:relative;
-	
+
 }
 .kode-gallery-item:hover .kode-text{
 	padding:15px 15px;
@@ -2171,7 +2171,7 @@ section.kode-contact{
 	font-size:22px;
 	margin:0px;
 	line-height:22px;
-	
+
 }
 /*
 ===========================================
@@ -2291,7 +2291,7 @@ section.kode-contact{
 	border-bottom: solid 1px #CCC;
 }
 .kode-related-couses h2{
-	margin-bottom:20px;	
+	margin-bottom:20px;
 }
 .kode-cause-list-detail .fund-meta{
 	width:auto;
@@ -2354,7 +2354,7 @@ label {
 }
 
 input:checked + .radio-value {
-  background-image:url(/assets/images/tick.png);
+  background-image:url("~src/assets/images/tick.png");
 }
 /*
 =================================================
@@ -2909,7 +2909,7 @@ font-family: 'Source Sans Pro', sans-serif;
 
 */
 section.news-subscription{
-	background-image:url(/assets/images/newsletter-bg.jpg);
+	background-image:url("~src/assets/images/newsletter-bg.jpg");
 	background-size:cover;
 	background-attachment:fixed;
 	position:relative;
@@ -2946,7 +2946,7 @@ section.news-subscription{
 	height:70px;
 	font-size:16px;
 	font-weight:300;
-	
+
 	padding:15px 20px;
 	margin:0px 0px 30px 0px;
 }
@@ -2983,7 +2983,7 @@ section.client-section{
 }
 .client-section #owl-demo .item{
 	text-align:center;
-	
+
 }
 .client-section #owl-demo .item img {
 	width:auto;
@@ -3002,11 +3002,11 @@ section.client-section{
 .kode-testimonials-7 .bx-pager.bx-default-pager{top:107%;position:absolute;}
 .progress-chart-awar h4{
 	font-weight:500;
-	
+
 }
 .progress-chart-awar .progress .progress-bar{
 	line-height:15px;
-	font-size:12px;	
+	font-size:12px;
 }
 .progress-chart-awar h5{margin-bottom:5px;}
 .progress-bar.progress-bar-danger > span{font-weight:400;}
@@ -3042,7 +3042,7 @@ section.client-section{
 	display: none;
 }
 .kode-cause-content .kode-text p {
-    font-size: 15px;    
+    font-size: 15px;
 	margin:0px;
 }
 .kode-cause-list .kode-text > h2{
@@ -3077,7 +3077,7 @@ section.kode-map{
 .clock-item .inner {
 	height: 0px;
 	padding-bottom: 100%;
-	position: relative;	
+	position: relative;
 	width: 100%;
 }
 .clock-canvas {
@@ -3088,7 +3088,7 @@ section.kode-map{
 	box-shadow: 0px 0px 0px 7px #d8d6d6 inset;
 }
 .ev-text {
-	color: #fff;	
+	color: #fff;
 	font-size: 30px;
 	font-weight: bold;
 	text-align: center;
@@ -3120,7 +3120,7 @@ section.kode-map{
 	border: 1px solid #e6e6e6;
 }
 .kode-map iframe{
-	margin:0px;	
+	margin:0px;
 }
 .evdetail-info {
 	float: left;
@@ -3150,7 +3150,7 @@ section.kode-map{
 	float: left;
 	width: 100%;
 }
-.event-btns a {	
+.event-btns a {
 	margin: 0px 15px 15px 0px;
 }
 .bx-wrapper .bx-pager.bx-default-pager a{
@@ -3235,7 +3235,7 @@ section.kode-pagesection{
 /* Couses List */
 .kode-causes-list figure{
 	position:relative;
-	
+
 }
 .kode-causes-list figure,.kode-causes-thumb,.cause-inner-caption,.kode-causes-list ul li img {
 	float: left;
@@ -3324,7 +3324,7 @@ section.kode-pagesection{
 	position: absolute;
 	left: 0px;
 	bottom: 0px;
-	background: url(/assets/images/caption-bg.png);
+	background: url("~src/assets/images/caption-bg.png");
 	width: 100%;
 	z-index: 2;
 }
@@ -3335,7 +3335,7 @@ section.kode-pagesection{
 	overflow: inherit;
 }
 .causes-skills .progress-bar {
-	
+
 	position: relative;
 }
 .causes-skills .progress-bar span {
@@ -3364,7 +3364,7 @@ section.kode-pagesection{
 	margin: 0px;
 }
 .kode-causes-info h2 a {
-	color: #ffffff;	
+	color: #ffffff;
 	text-transform: uppercase;
 }
 .kode-causes-info p {

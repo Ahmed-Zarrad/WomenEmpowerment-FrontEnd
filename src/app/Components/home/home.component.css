@@ -652,7 +652,7 @@ header{
 ===========================================
 */
 .causes-section{
-	background-image:url("~src/assets/images/causes-bg.jpg");
+	background-image:url('~src/assets/images/causes-bg.jpg');
 	position:relative;
 	background-size: cover;
 	background-attachment:fixed;

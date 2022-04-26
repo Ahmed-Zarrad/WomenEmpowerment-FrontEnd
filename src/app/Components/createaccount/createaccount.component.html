@@ -2,10 +2,10 @@
 <div class="container login-container">
   <br>
   <br />
-  <div class="raw"style="margin-top: 100px;">
+  <div class="raw">
 
     <div class="col-md-16 login-form-1">
-      <h3 class="col-5 mx-auto" style="font-weight: bold;">CREATE NEW ACCOUNT</h3>
+      <h3 class="col-5 mx-auto">CREATE NEW ACCOUNT</h3>
 
       <form name="form" #u="ngForm" (ngSubmit)="addUser()">
 
@@ -120,7 +120,7 @@
           </div>
 
           <div class="d-grid gap-5 col-3 mx-auto">
-            <button href="client"  (click)="addUser()" type="button" class="btn btn-success"> Create Account </button>
+            <button href="client" [disabled]="u.invalid" (click)="addUser()" type="button" class="btn btn-success"> Create Account </button>
           </div>
           <br />
           <div class="d-grid gap-5 col-3 mx-auto">
@@ -128,7 +128,7 @@
           </div>
           <br>
           <br />
-          <div class="alert alert-primary" style="margin-top: 75px;">{{msg}}</div>
+          <div class="alert alert-primary">{{msg}}</div>
         </div>
       </form>
     </div>

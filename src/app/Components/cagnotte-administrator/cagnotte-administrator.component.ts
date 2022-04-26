@@ -24,18 +24,22 @@ export class CagnotteAdministratorComponent implements OnInit {
 
   ngOnInit(): void {
     this.cagnotte=new Cagnotte();
-  
-    
+
+
     let resp=this.cagnotteService.getAllCagnotte();
+    console.log("data",resp);
     resp.subscribe((data)=>this.ListCagnotte=data);
+
+
+
   }
 
-  
+
   AddCagnotteShow(){
     this.show=true;
     this.showCagnotte=false;
   }
-  
+
   ViewCagnotte(){
     this.show=false;
     this.showCagnotte=true;
@@ -64,20 +68,20 @@ export class CagnotteAdministratorComponent implements OnInit {
       console.log(data)
       this.cagnotte = new Cagnotte();
       this.gotoList();
-    }, 
+    },
     error => console.log(error));
   }
 
   onSubmit() {
     this.submitted = true;
-    this.save();    
+    this.save();
   }
 
   gotoList() {
     this.router.navigate(['/administrator/cagnotte']);
   }
 
-  
+
 
 
 }

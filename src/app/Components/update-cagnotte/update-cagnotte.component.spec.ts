@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SliderComponent } from './slider.component';
+import { UpdateCagnotteComponent } from './update-cagnotte.component';
 
-describe('SliderComponent', () => {
-  let component: SliderComponent;
-  let fixture: ComponentFixture<SliderComponent>;
+describe('UpdateCagnotteComponent', () => {
+  let component: UpdateCagnotteComponent;
+  let fixture: ComponentFixture<UpdateCagnotteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SliderComponent ]
+      declarations: [ UpdateCagnotteComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SliderComponent);
+    fixture = TestBed.createComponent(UpdateCagnotteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

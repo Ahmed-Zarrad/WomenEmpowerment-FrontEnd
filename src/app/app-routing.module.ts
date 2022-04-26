@@ -1,3 +1,4 @@
+import { UpdateCagnotteComponent } from './Components/update-cagnotte/update-cagnotte.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthentificateComponent } from './Components/authentificate/authentificate.component';
@@ -56,6 +57,8 @@ import { ProductsViewComponent } from './Components/products-view/products-view.
 import { BasketComponent } from './Components/basket/basket.component';
 import { AuthorizeforgotguardServiceService } from './Services/AuthorizeforgotguardService/authorizeforgotguard-service.service';
 import { PdfComponent } from './Components/pdf/pdf.component';
+import { CagnotteListComponent } from './Components/cagnotte-list/cagnotte-list.component';
+import { CreateCagnotteComponent } from './Components/create-cagnotte/create-cagnotte.component';
 
 
 
@@ -66,9 +69,9 @@ const routes: Routes = [
 
 
 
- 
- 
-  
+
+
+
   { path: 'home', component: HomeComponent },
   { path: 'home/category', component: CategoryComponent },
   { path: 'home/basket', component: BasketComponent },
@@ -80,19 +83,29 @@ const routes: Routes = [
   { path: 'home/forgot', component: ForgotComponent },
 
   { path: 'administrator', component: EsapaceAdministratorComponent, canActivate: [AuthorizeGuardService] },
-  { path: 'administrator/user', component: UserComponent, canActivate: [AuthorizeGuardService] },
+  { path: 'administrator/user', component: UserComponent,  },
   { path: 'administrator/delivery', component: DeliveryAdministratorComponent, canActivate: [AuthorizeGuardService] },
-  
+//cagnotte-list router
+
+{ path: 'administrator/cagnottes', component: CagnotteListComponent  },
+{ path: 'administrator/cagnottes/add', component: CreateCagnotteComponent  },
+{ path: 'administrator/cagnottes/update/:idCagnotte', component: UpdateCagnotteComponent  },
+
+
+
   { path: 'administrator/publicity', component: PublicityAdministratorComponent, canActivate: [AuthorizeGuardService]},
   { path: 'administrator/sales', component: SalesAdministratorComponent, canActivate: [AuthorizeGuardService] },
   { path: 'administrator/claims', component: ClaimAdministratorComponent, canActivate: [AuthorizeGuardService] },
   { path: 'administrator/forum', component: ForumAdministratorComponent, canActivate: [AuthorizeGuardService] },
   { path: 'administrator/department', component: DepartmentAdministratorComponent, canActivate: [AuthorizeGuardService] },
   { path: 'administrator/stock', component: StockAdministratorComponent, canActivate: [AuthorizeGuardService]},
-  { path: 'administrator/statistic', component: StatisticAdministratorComponent, canActivate: [AuthorizeGuardService]},
+  { path: 'administrator/statistic', component: StatisticAdministratorComponent},
   { path: 'administrator/comptability', component: ComptabilityAdministratorComponent, canActivate: [AuthorizeGuardService]},
-  { path: 'administrator/cagnotte', component: CagnotteAdministratorComponent, canActivate: [AuthorizeGuardService] },
-  { path: 'administrator/event', component: EventAdministratorComponent, canActivate: [AuthorizeGuardService]},
+
+
+  //auth guard supprime
+  { path: 'administrator/cagnotte', component: CagnotteAdministratorComponent },
+  { path: 'administrator/event', component: EventAdministratorComponent},
   { path: 'administrator/category', component: CategoryadministratorComponent },
   { path: 'administrator/order', component: OrderAdministratorComponent, canActivate: [AuthorizeGuardService] },
 
@@ -103,7 +116,9 @@ const routes: Routes = [
   { path: 'client/home', component: HomeClientComponent, canActivate: [AuthorizeclientguardService]},
   { path: 'client/profile', component: ProfileClientComponent, canActivate: [AuthorizeclientguardService]},
   { path: 'client/claim', component: ClaimClientComponent, canActivate: [AuthorizeclientguardService] },
-  { path: 'client/cagnotte', component: CagnotteClientComponent, canActivate: [AuthorizeclientguardService] },
+
+  //auth guard
+  { path: 'client/cagnotte', component: CagnotteClientComponent },
   { path: 'client/event', component: EventClientComponent, canActivate: [AuthorizeclientguardService] },
   { path: 'client/product', component: ProductComponent,canActivate: [AuthorizeclientguardService]},
   { path: 'client/order', component: OrderClientComponent, canActivate: [AuthorizeclientguardService] },
@@ -124,7 +139,7 @@ const routes: Routes = [
 
   { path: 'home/forgot/updatepassword', component: UpdatepasswordComponent },
 
-  { path: 'departmentmanager/Sales', component: SalesDepartmentManagerComponent, canActivate: [AuthorizedepmantguardService]},
+  { path: 'departmentmanager/Sales', component: SalesDepartmentManagerComponent},
   { path: 'departmentmanager/comment', component: CommentStatsComponent, canActivate: [AuthorizedepmantguardService]},
 
       { path: '**', component: HomeComponent }

@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "WomenEmpowerment": {
+    "tounsistore": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -16,7 +16,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/WomenEmpowerment",
+            "outputPath": "dist/tounsistore",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -29,26 +29,11 @@
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css",
-              "node_modules/ngx-toastr/toastr.css",
-              "src/assets/css/color.css",
-              "src/assets/css/themetypo.css",
-              "src/assets/js/jquery.bxslider.min.js"
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
-              "node_modules/bootstrap/dist/js/bootstrap.js" ,
-              "src/assets/js/jquery.min.js",
-
-              "src/assets/js/bootstrap.min.js" ,
-              "src/assets/js/jquery.bxslider.min.js",
-              "src/assets/js/bootstrap-slider.js" ,
-              "src/assets/js/waypoints.min.js" ,
-              "src/assets/js/jquery.counterup.min.js",
-              "src/assets/js/bg-moving.js" ,
-              "src/assets/js/dl-menu/modernizr.custom.js",
-              "src/assets/js/dl-menu/jquery.dlmenu.js" ,
-              "src/assets/js/functions.js"
-
+              "node_modules/bootstrap/dist/js/bootstrap.js" 
             ]
           },
           "configurations": {
@@ -84,18 +69,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "WomenEmpowerment:build"
+            "browserTarget": "tounsistore:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "WomenEmpowerment:build:production"
+              "browserTarget": "tounsistore:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "WomenEmpowerment:build"
+            "browserTarget": "tounsistore:build"
           }
         },
         "test": {
@@ -133,16 +118,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "WomenEmpowerment:serve"
+            "devServerTarget": "tounsistore:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "WomenEmpowerment:serve:production"
+              "devServerTarget": "tounsistore:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "WomenEmpowerment"
+  "defaultProject": "tounsistore"
 }

@@ -76,7 +76,9 @@ import { CommentStatsComponent } from './Components/comment-stats/comment-stats.
 import { PdfComponent } from './Components/pdf/pdf.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { SortedComponentComponent } from './Components/sorted-component/sorted-component.component';
-import { JobOffreComponent } from './components/job-offre/job-offre.component';
+import { CagnotteListComponent } from './Components/cagnotte-list/cagnotte-list.component';
+import { CreateCagnotteComponent } from './Components/create-cagnotte/create-cagnotte.component';
+import { UpdateCagnotteComponent } from './Components/update-cagnotte/update-cagnotte.component';
 
 
 
@@ -150,7 +152,9 @@ import { JobOffreComponent } from './components/job-offre/job-offre.component';
     ProductsViewComponent,
     PdfComponent,
     SortedComponentComponent,
-    JobOffreComponent,
+    CagnotteListComponent,
+    CreateCagnotteComponent,
+    UpdateCagnotteComponent,
   ],
 
   imports: [

@@ -159,18 +159,18 @@ import { SortedComponentComponent } from './Components/sorted-component/sorted-c
     FormsModule,
     NgxCaptchaModule,
     HttpClientModule,
-    //HttpClientXsrfModule.withOptions({ cookieName: 'XSRF-TOKEN' }),
+    // HttpClientXsrfModule.withOptions({ cookieName: 'XSRF-TOKEN' }),
     BrowserAnimationsModule,
     NgbModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     NgxStripeModule.forRoot('pk_test_51IziEXDGIe2QH5KPbwRWzkIgPxzHWJ21nzT9LMZdb01c5xNMDu8B1Vww6Z5Y60HVIfJPhdUU9D3J1VLN06mnBYvS00HUQItxxq'),
     TranslateModule.forRoot({
-      defaultLanguage:'en',
-      loader:{
-        provide:TranslateLoader,
-        useFactory:createTranslateLoader,
-        deps:[HttpClient]
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient]
 
       }
     }
@@ -189,6 +189,6 @@ import { SortedComponentComponent } from './Components/sorted-component/sorted-c
 export class AppModule { }
 
 export function createTranslateLoader(http:HttpClient){
-  return new TranslateHttpLoader(http,'./assets/i18n/', '.json')
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json')
 
 }

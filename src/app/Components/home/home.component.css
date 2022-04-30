@@ -1178,7 +1178,7 @@ header{
 ===========================================
 */
 .kode-team-section{
-	background-image:url("~src/assets/images/team-bg.png");
+	background-image:url('~src/assets/images/team-bg.png');
 }
 .kode-team-member{
 	float:left;

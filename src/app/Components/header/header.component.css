@@ -88,7 +88,7 @@ header{
 */
 .header-2 .nav-container{
 	background-color:#fff;
-	
+
 }
 .header-2 .navigation ul li a{
 	color:#7f7f7f;
@@ -157,7 +157,7 @@ header{
 
 .logo{
 	float:left;
-	padding:18px 0px 32px 0;
+	padding:18px 30px 32px 30px;
 	position:relative;
 }
 .logo:before{
@@ -208,7 +208,7 @@ header{
 	font-weight:normal;
 	padding-top: 30px;
     padding-bottom: 30px;
-  
+
 }
 .navigation ul li:hover > a{
 }
@@ -265,7 +265,7 @@ header{
 }
 .navigation ul li.last ul{
 	left: auto;
-	right: 0px;	
+	right: 0px;
 }
 .navigation ul li.last ul ul{
 	left: auto;
@@ -287,7 +287,7 @@ header{
 	float:left;
 	width: 100%;
 	min-width:200px;
-	
+
 }
 .navigation ul ul li a{
 	color: #fff;
@@ -349,3 +349,47 @@ header{
 #kode-responsive-navigation{
 	display: none;
 }
+ a.donate{
+  display:inline-block;
+  padding:10px 30px;
+  border:solid 1px #fff;
+  border-radius:5px;
+  font-size:14px;
+  text-transform:uppercase;
+  color:#fff;
+  text-decoration:none;
+   margin-left: 50px;
+   margin-top: 10px;
+   margin-right: 10px;
+
+}
+a.donate:hover {
+background-color:#cc3367 ;
+}
+.img-container {
+  width: 6vh;
+  height: 6vh;
+  border-radius: 100%;
+  cursor: pointer;
+  outline: none;
+
+}
+ small{
+   font-size:14px;
+   text-decoration:none;
+   margin-left: 5px;
+   display:inline-block;
+}
+.profile{
+  color:#fff;
+  display:inline-block;
+  margin-left: 50px;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding:5px 20px;
+  border-radius:10px;
+}
+.profile:hover{
+   background-color: #cc3367;
+ }
+

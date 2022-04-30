@@ -1,7 +1,7 @@
 <!--HEADER START-->
 <header class="header-style-3">
   <!--NAV CONTAINER START-->
-  <div class="nav-container"style="height: 90px;">
+  <div class="nav-container"style="height: 91px;">
     <!--LOGO START-->
     <div class="logo" >
       <img src="assets/images/logo.png" >
@@ -177,15 +177,15 @@
 
                     </ul>
 
-                  <a href="/home/authentificate"*ngIf="NotConnected" class="donate">SIGN IN</a>
+                  <a href="/home/createaccount"*ngIf="NotConnected" class="donate">JOIN US</a>
 
 
-                  <a routerLink="/profile" routerLinkActive="active-link" *ngIf="Admin"  class="profile" >
+                  <a routerLink="/client/profile" routerLinkActive="active-link" *ngIf="Admin"  class="profile" >
                     <img src='/assets/images/placeholder.png' class="img-container">
                     <small >{{user}}</small>
                   </a>
 
-                  <div routerLink="/profile" routerLinkActive="active-link" *ngIf="Client" >
+                  <div routerLink="/client/profile" routerLinkActive="active-link" *ngIf="Client" class="profile" >
                     <img src='/assets/images/placeholder.png' class="img-container">
                     <small >{{user}}</small>
                   </div>

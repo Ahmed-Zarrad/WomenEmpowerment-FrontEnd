@@ -66,9 +66,9 @@ const routes: Routes = [
 
 
 
- 
- 
-  
+
+
+
   { path: 'home', component: HomeComponent },
   { path: 'home/category', component: CategoryComponent },
   { path: 'home/basket', component: BasketComponent },
@@ -82,7 +82,7 @@ const routes: Routes = [
   { path: 'administrator', component: EsapaceAdministratorComponent, canActivate: [AuthorizeGuardService] },
   { path: 'administrator/user', component: UserComponent, canActivate: [AuthorizeGuardService] },
   { path: 'administrator/delivery', component: DeliveryAdministratorComponent, canActivate: [AuthorizeGuardService] },
-  
+
   { path: 'administrator/publicity', component: PublicityAdministratorComponent, canActivate: [AuthorizeGuardService]},
   { path: 'administrator/sales', component: SalesAdministratorComponent, canActivate: [AuthorizeGuardService] },
   { path: 'administrator/claims', component: ClaimAdministratorComponent, canActivate: [AuthorizeGuardService] },
@@ -105,16 +105,16 @@ const routes: Routes = [
   { path: 'client/claim', component: ClaimClientComponent, canActivate: [AuthorizeclientguardService] },
   { path: 'client/cagnotte', component: CagnotteClientComponent, canActivate: [AuthorizeclientguardService] },
   { path: 'client/event', component: EventClientComponent, canActivate: [AuthorizeclientguardService] },
-  { path: 'client/product', component: ProductComponent,canActivate: [AuthorizeclientguardService]},
+  { path: 'client/product', component: ProductComponent, canActivate: [AuthorizeclientguardService]},
   { path: 'client/order', component: OrderClientComponent, canActivate: [AuthorizeclientguardService] },
   { path: 'client/lista', component: ListaArticuloComponent, canActivate: [AuthorizeclientguardService] },
   { path: 'client/detalle/:id', component: DetalleArticuloComponent, canActivate: [AuthorizeclientguardService]},
   { path: 'Client/department/virtual_visit', component: DepartmentClientComponent, canActivate: [AuthorizedepmantguardService] },
   { path: 'client/delivery', component: DeliveryClientComponent, canActivate: [AuthorizeclientguardService] },
-  { path: 'pdf', component:PdfComponent },
+  { path: 'pdf', component: PdfComponent },
   { path: 'deliveryperson', component: EsapaceDeliveryPersonComponent, canActivate: [AuthorizedeliverymenguardService] },
   { path: 'deliveryperson/delivery', component: DeliveryDeliveryPersonComponent, canActivate: [AuthorizedeliverymenguardService]},
-  { path: 'client/products-view/:id',component:ProductsViewComponent},
+  { path: 'client/products-view/:id', component: ProductsViewComponent},
   { path: 'departmentmanager/product', component: ProductAdministratorComponent, canActivate: [AuthorizedepmantguardService] },
   { path: 'products/inmydepartment/:id', component: EspaceDepartmentManagerComponent, canActivate: [AuthorizedepmantguardService] },
 

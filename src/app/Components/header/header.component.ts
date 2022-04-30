@@ -12,30 +12,31 @@ import { BasketService } from 'src/app/Services/Basket/basket.service';
 })
 export class HeaderComponent implements OnInit {
 
-  user: string = localStorage.getItem("AuthUsername");
+
+  user: string = localStorage.getItem('AuthUsername');
   NotConnected: boolean = true;
   Client: boolean;
   DeliveryPerson: boolean;
   DepartmentManager: boolean;
   Admin: boolean;
 
- 
 
 
-  
+
+
 
   basket: number=0;
 
   constructor(private userservice: UserService, private tokenstorage: TokenstorageService, private router: Router ,public translate:TranslateService,private CartService:BasketService) { }
 
-  
+
 
 
 
   ngOnInit(): void {
     this.basket;
     this.nbrproductFun();
-    
+
     console.log(this.basket);
     if (localStorage.getItem("AuthAuthorities").includes("ADMINISTRATOR")) {
       this.Admin = true;
@@ -87,7 +88,7 @@ nbrproductFun(){
   }
 }
 
-  
+
 
 
 }

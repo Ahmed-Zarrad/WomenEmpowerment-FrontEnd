@@ -76,6 +76,14 @@ import { CommentStatsComponent } from './Components/comment-stats/comment-stats.
 import { PdfComponent } from './Components/pdf/pdf.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { SortedComponentComponent } from './Components/sorted-component/sorted-component.component';
+import { CreateOfferComponent } from './Components/create-offer/create-offer.component';
+import { CandidatListComponent } from './Components/candidat-list/candidat-list.component';
+import { CreateCandidatComponent } from './Components/create-candidat/create-candidat.component';
+import { UpdateCandidatComponent } from './Components/update-candidat/update-candidat.component';
+import { CandidatDetailsComponent } from './Components/candidat-details/candidat-details.component';
+import { OffersListComponent } from './Components/offers-list/offers-list.component';
+import { OfferDetailsComponent } from './Components/offer-details/offer-details.component';
+
 
 
 
@@ -150,6 +158,14 @@ import { SortedComponentComponent } from './Components/sorted-component/sorted-c
     ProductsViewComponent,
     PdfComponent,
     SortedComponentComponent,
+    CandidatListComponent,
+    CreateCandidatComponent,
+    UpdateCandidatComponent,
+    CandidatDetailsComponent,
+    CreateOfferComponent,
+    OffersListComponent,
+    OfferDetailsComponent,
+
   ],
 
   imports: [

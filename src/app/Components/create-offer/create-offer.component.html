@@ -1,0 +1,26 @@
+<div class="col-md-6 offset-md-3" style="margin-top: 150px;margin-bottom: 150px;">
+    <h3> Create Offer </h3>
+    <form (ngSubmit) = "onSubmit()">
+
+        <div class="form-group">
+            <label> Offer Title </label>
+            <input type="text" class ="form-control" id = "titleOffre"
+                [(ngModel)] = "offer.titleOffre" name = "titleOffre">
+        </div>
+
+        <div class="form-group">
+            <label> Salary</label>
+            <input type="text" class ="form-control" id = "titleOffre"
+                [(ngModel)] = "offer.titleOffre" name = "titleOffre">
+        </div>
+
+        <div class="form-group">
+            <label> Offer Description</label>
+            <input type="text" class ="form-control" id = "offerDescription"
+                [(ngModel)] = "offer.offerDescription" name = "offerDescription">
+        </div>
+
+        <button class = "btn btn-success" type ="submit">Submit</button>
+
+    </form>
+    </div>

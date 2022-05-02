@@ -56,6 +56,13 @@ import { ProductsViewComponent } from './Components/products-view/products-view.
 import { BasketComponent } from './Components/basket/basket.component';
 import { AuthorizeforgotguardServiceService } from './Services/AuthorizeforgotguardService/authorizeforgotguard-service.service';
 import { PdfComponent } from './Components/pdf/pdf.component';
+import { CreateOfferComponent } from './Components/create-offer/create-offer.component';
+import { CandidatListComponent } from './Components/candidat-list/candidat-list.component';
+import { CreateCandidatComponent } from './Components/create-candidat/create-candidat.component';
+import { UpdateCandidatComponent } from './Components/update-candidat/update-candidat.component';
+import { CandidatDetailsComponent } from './Components/candidat-details/candidat-details.component';
+import { OffersListComponent } from './Components/offers-list/offers-list.component';
+import { OfferDetailsComponent } from './Components/offer-details/offer-details.component';
 
 
 
@@ -95,6 +102,10 @@ const routes: Routes = [
   { path: 'administrator/event', component: EventAdministratorComponent, canActivate: [AuthorizeGuardService]},
   { path: 'administrator/category', component: CategoryadministratorComponent },
   { path: 'administrator/order', component: OrderAdministratorComponent, canActivate: [AuthorizeGuardService] },
+  {path: 'candidat-details/:id', component: CandidatDetailsComponent, canActivate: [AuthorizeGuardService] },
+  {path: 'create-offer', component : CreateOfferComponent, canActivate: [AuthorizeGuardService] },
+  {path: 'offers-list', component: OffersListComponent, canActivate: [AuthorizeGuardService] },
+  {path: 'candidats', component: CandidatListComponent, canActivate: [AuthorizeGuardService] },
 
 
   { path: 'client/lista', component: ListaArticuloComponent, canActivate: [AuthorizeclientguardService] },
@@ -111,6 +122,8 @@ const routes: Routes = [
   { path: 'client/detalle/:id', component: DetalleArticuloComponent, canActivate: [AuthorizeclientguardService]},
   { path: 'Client/department/virtual_visit', component: DepartmentClientComponent, canActivate: [AuthorizedepmantguardService] },
   { path: 'client/delivery', component: DeliveryClientComponent, canActivate: [AuthorizeclientguardService] },
+  {path: 'create-candidat', component: CreateCandidatComponent, canActivate: [AuthorizeclientguardService]},
+  {path: 'update-candidat/:id', component: UpdateCandidatComponent, canActivate: [AuthorizeclientguardService]},
   { path: 'pdf', component: PdfComponent },
   { path: 'deliveryperson', component: EsapaceDeliveryPersonComponent, canActivate: [AuthorizedeliverymenguardService] },
   { path: 'deliveryperson/delivery', component: DeliveryDeliveryPersonComponent, canActivate: [AuthorizedeliverymenguardService]},
@@ -127,7 +140,8 @@ const routes: Routes = [
   { path: 'departmentmanager/Sales', component: SalesDepartmentManagerComponent, canActivate: [AuthorizedepmantguardService]},
   { path: 'departmentmanager/comment', component: CommentStatsComponent, canActivate: [AuthorizedepmantguardService]},
 
-      { path: '**', component: HomeComponent }
+
+  { path: '**', component: HomeComponent }
 
 ];
 

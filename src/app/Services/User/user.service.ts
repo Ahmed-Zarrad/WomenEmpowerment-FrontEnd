@@ -1,11 +1,12 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { CreateAccount } from '../../Models/CreateAccount';
 import { JwtResponse } from '../../Models/JwtResponse';
 import { Role } from '../../Models/Role';
 import { User } from '../../Models/User';
+
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -43,6 +44,8 @@ export class UserService {
   getSommeSalaireUserURL = 'http://localhost:9091/SpringMVC/servlet/somme-salaire';
   getMaxSalaireUserURL = 'http://localhost:9091/SpringMVC/servlet/max-salaire';
   getMinAgeUserURL = 'http://localhost:9091/SpringMVC/servlet/min-age';
+
+  public getImage = new Subject<string>();
 
   constructor(private userhttp: HttpClient, private router: Router) {
   }

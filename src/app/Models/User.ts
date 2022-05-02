@@ -1,4 +1,3 @@
-import { Basket } from './Basket';
 import { Role } from './Role';
 import { SexeType } from './SexeType';
 import { ZoneMap } from './ZoneMap';
@@ -6,7 +5,7 @@ import { ZoneMap } from './ZoneMap';
 
 export class User {
 
-  idUser: string;
+  idUser: number;
   username: string;
   lastNameUser: string;
   cinUser: string;
@@ -35,12 +34,12 @@ export class User {
 
 
 
-  constructor(iduser: number, username: string, lastNameUser: string, cinUser: string, password: string, confirmPasswordUser: string,
+  constructor(idUser: number, username: string, lastNameUser: string, cinUser: string, password: string, confirmPasswordUser: string,
               stateUser: boolean, phoneNumberUser: string, adressUser: string, birthDateUser: Date, emailUser: string, sexeUser: SexeType,
               accountNonLocked: boolean, lockTime: Date, resettoken: string, isBlocked: boolean, blockDate: Date,
               unBlockDate: Date, isPrivate: boolean, salaire: number, pointnumber: number, avilaibility: boolean, zone: ZoneMap,
               role: Role, fileName: string) {
-    this.idUser = this.idUser;
+    this.idUser = idUser;
     this.username = username;
     this.lastNameUser = lastNameUser;
     this.cinUser = cinUser;
@@ -67,5 +66,4 @@ export class User {
     this.fileName = fileName;
 
   }
-
 }

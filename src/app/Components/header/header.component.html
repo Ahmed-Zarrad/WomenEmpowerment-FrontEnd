@@ -180,13 +180,13 @@
                   <a href="/home/createaccount"*ngIf="NotConnected" class="donate">JOIN US</a>
 
 
-                  <a routerLink="/client/profile" routerLinkActive="active-link" *ngIf="Admin"  class="profile" >
-                    <img src='/assets/images/placeholder.png' class="img-container">
+                  <a routerLink="/administrator/user" routerLinkActive="active-link" *ngIf="Admin"  class="profile" >
+                    <img src={{fileName}} class="img-container">
                     <small >{{user}}</small>
                   </a>
 
                   <div routerLink="/client/profile" routerLinkActive="active-link" *ngIf="Client" class="profile" >
-                    <img src='/assets/images/placeholder.png' class="img-container">
+                    <img src={{fileName}} class="img-container">
                     <small >{{user}}</small>
                   </div>
 

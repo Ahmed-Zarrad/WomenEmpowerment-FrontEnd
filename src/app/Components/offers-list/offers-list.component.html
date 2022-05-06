@@ -1,0 +1,13 @@
+<div class="card-deck" style="margin-top: 150px;margin-bottom: 150px;">
+    <div class="card" *ngFor ="let offer of offers">
+      <!--img class="card-img-top" src="..." alt="Card image cap"-->
+      <div class="card-body">
+        <h5 class="card-title">{{offer.titleOffre}}</h5>
+        <p class="card-text">{{offer.offerDescription}}</p>
+        <button (click) = "offerDetails(offer.id)" class = "btn btn-info" style="margin-left: 10px"> View details</button>      </div>
+      <div class="card-footer">
+        <small class="text-muted">created on {{offer.dateCreation.toDateString()}}</small>
+      </div>
+    </div>
+
+  </div>

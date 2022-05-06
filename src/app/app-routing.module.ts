@@ -1,4 +1,5 @@
-import { UpdateCagnotteComponent } from './Components/update-cagnotte/update-cagnotte.component';
+import { UpdateEventComponent } from './update-event/update-event.component';
+import { CreateEventComponent } from './create-event/create-event.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthentificateComponent } from './Components/authentificate/authentificate.component';
@@ -57,8 +58,17 @@ import { ProductsViewComponent } from './Components/products-view/products-view.
 import { BasketComponent } from './Components/basket/basket.component';
 import { AuthorizeforgotguardServiceService } from './Services/AuthorizeforgotguardService/authorizeforgotguard-service.service';
 import { PdfComponent } from './Components/pdf/pdf.component';
+import { CreateOfferComponent } from './Components/create-offer/create-offer.component';
+import { CandidatListComponent } from './Components/candidat-list/candidat-list.component';
+import { CreateCandidatComponent } from './Components/create-candidat/create-candidat.component';
+import { UpdateCandidatComponent } from './Components/update-candidat/update-candidat.component';
+import { CandidatDetailsComponent } from './Components/candidat-details/candidat-details.component';
+import { OffersListComponent } from './Components/offers-list/offers-list.component';
+import { OfferDetailsComponent } from './Components/offer-details/offer-details.component';
 import { CagnotteListComponent } from './Components/cagnotte-list/cagnotte-list.component';
 import { CreateCagnotteComponent } from './Components/create-cagnotte/create-cagnotte.component';
+import { UpdateCagnotteComponent } from './Components/update-cagnotte/update-cagnotte.component';
+import { EventListComponent } from './event-list/event-list.component';
 
 
 
@@ -81,17 +91,15 @@ const routes: Routes = [
   { path: 'home/authentificate', component: AuthentificateComponent },
   { path: 'home/createaccount', component: CreateaccountComponent },
   { path: 'home/forgot', component: ForgotComponent },
+//cagnottes
+  { path: 'administrator/cagnottes', component: CagnotteListComponent, canActivate: [AuthorizeGuardService]   },
+  { path: 'administrator/cagnottes/add', component: CreateCagnotteComponent, canActivate: [AuthorizeGuardService]   },
+  { path: 'administrator/cagnottes/update/:idCagnotte', component: UpdateCagnotteComponent, canActivate: [AuthorizeGuardService]   },
+
 
   { path: 'administrator', component: EsapaceAdministratorComponent, canActivate: [AuthorizeGuardService] },
-  { path: 'administrator/user', component: UserComponent,  },
+  { path: 'administrator/user', component: UserComponent, canActivate: [AuthorizeGuardService] },
   { path: 'administrator/delivery', component: DeliveryAdministratorComponent, canActivate: [AuthorizeGuardService] },
-//cagnotte-list router
-
-{ path: 'administrator/cagnottes', component: CagnotteListComponent  },
-{ path: 'administrator/cagnottes/add', component: CreateCagnotteComponent  },
-{ path: 'administrator/cagnottes/update/:idCagnotte', component: UpdateCagnotteComponent  },
-
-
 
   { path: 'administrator/publicity', component: PublicityAdministratorComponent, canActivate: [AuthorizeGuardService]},
   { path: 'administrator/sales', component: SalesAdministratorComponent, canActivate: [AuthorizeGuardService] },
@@ -99,15 +107,28 @@ const routes: Routes = [
   { path: 'administrator/forum', component: ForumAdministratorComponent, canActivate: [AuthorizeGuardService] },
   { path: 'administrator/department', component: DepartmentAdministratorComponent, canActivate: [AuthorizeGuardService] },
   { path: 'administrator/stock', component: StockAdministratorComponent, canActivate: [AuthorizeGuardService]},
-  { path: 'administrator/statistic', component: StatisticAdministratorComponent},
+  { path: 'administrator/statistic', component: StatisticAdministratorComponent, canActivate: [AuthorizeGuardService]},
   { path: 'administrator/comptability', component: ComptabilityAdministratorComponent, canActivate: [AuthorizeGuardService]},
+  { path: 'administrator/cagnotte', component: CagnotteAdministratorComponent, canActivate: [AuthorizeGuardService] },
 
 
-  //auth guard supprime
-  { path: 'administrator/cagnotte', component: CagnotteAdministratorComponent },
-  { path: 'administrator/event', component: EventAdministratorComponent},
+  //event
+  { path: 'administrator/event', component: EventListComponent, canActivate: [AuthorizeGuardService]},
+
+
+  { path: 'administrator/event/add', component: CreateEventComponent, canActivate: [AuthorizeGuardService]   },
+  { path: 'administrator/event/update/:idEvent', component: UpdateEventComponent, canActivate: [AuthorizeGuardService]   },
+
+
+
+
+
   { path: 'administrator/category', component: CategoryadministratorComponent },
   { path: 'administrator/order', component: OrderAdministratorComponent, canActivate: [AuthorizeGuardService] },
+  {path: 'candidat-details/:id', component: CandidatDetailsComponent, canActivate: [AuthorizeGuardService] },
+  {path: 'create-offer', component : CreateOfferComponent, canActivate: [AuthorizeGuardService] },
+  {path: 'offers-list', component: OffersListComponent, canActivate: [AuthorizeGuardService] },
+  {path: 'candidats', component: CandidatListComponent, canActivate: [AuthorizeGuardService] },
 
 
   { path: 'client/lista', component: ListaArticuloComponent, canActivate: [AuthorizeclientguardService] },
@@ -116,20 +137,25 @@ const routes: Routes = [
   { path: 'client/home', component: HomeClientComponent, canActivate: [AuthorizeclientguardService]},
   { path: 'client/profile', component: ProfileClientComponent, canActivate: [AuthorizeclientguardService]},
   { path: 'client/claim', component: ClaimClientComponent, canActivate: [AuthorizeclientguardService] },
+  { path: 'client/cagnotte', component: CagnotteClientComponent, canActivate: [AuthorizeclientguardService] },
+  //{ path: 'client/event', component: EventClientComponent, canActivate: [AuthorizeclientguardService] },
 
-  //auth guard
-  { path: 'client/cagnotte', component: CagnotteClientComponent },
-  { path: 'client/event', component: EventClientComponent, canActivate: [AuthorizeclientguardService] },
-  { path: 'client/product', component: ProductComponent,canActivate: [AuthorizeclientguardService]},
+
+  { path: 'client/event', component: EventClientComponent},
+
+
+  { path: 'client/product', component: ProductComponent, canActivate: [AuthorizeclientguardService]},
   { path: 'client/order', component: OrderClientComponent, canActivate: [AuthorizeclientguardService] },
   { path: 'client/lista', component: ListaArticuloComponent, canActivate: [AuthorizeclientguardService] },
   { path: 'client/detalle/:id', component: DetalleArticuloComponent, canActivate: [AuthorizeclientguardService]},
   { path: 'Client/department/virtual_visit', component: DepartmentClientComponent, canActivate: [AuthorizedepmantguardService] },
   { path: 'client/delivery', component: DeliveryClientComponent, canActivate: [AuthorizeclientguardService] },
-  { path: 'pdf', component:PdfComponent },
+  {path: 'create-candidat', component: CreateCandidatComponent, canActivate: [AuthorizeclientguardService]},
+  {path: 'update-candidat/:id', component: UpdateCandidatComponent, canActivate: [AuthorizeclientguardService]},
+  { path: 'pdf', component: PdfComponent },
   { path: 'deliveryperson', component: EsapaceDeliveryPersonComponent, canActivate: [AuthorizedeliverymenguardService] },
   { path: 'deliveryperson/delivery', component: DeliveryDeliveryPersonComponent, canActivate: [AuthorizedeliverymenguardService]},
-  { path: 'client/products-view/:id',component:ProductsViewComponent},
+  { path: 'client/products-view/:id', component: ProductsViewComponent},
   { path: 'departmentmanager/product', component: ProductAdministratorComponent, canActivate: [AuthorizedepmantguardService] },
   { path: 'products/inmydepartment/:id', component: EspaceDepartmentManagerComponent, canActivate: [AuthorizedepmantguardService] },
 
@@ -139,10 +165,11 @@ const routes: Routes = [
 
   { path: 'home/forgot/updatepassword', component: UpdatepasswordComponent },
 
-  { path: 'departmentmanager/Sales', component: SalesDepartmentManagerComponent},
+  { path: 'departmentmanager/Sales', component: SalesDepartmentManagerComponent, canActivate: [AuthorizedepmantguardService]},
   { path: 'departmentmanager/comment', component: CommentStatsComponent, canActivate: [AuthorizedepmantguardService]},
 
-      { path: '**', component: HomeComponent }
+
+  { path: '**', component: HomeComponent }
 
 ];
 

@@ -20,8 +20,8 @@ export class AuthenticationService {
   private currentUserSubject: BehaviorSubject<any>;
   public currentUser: Observable<any>;
 
-  authenticateURL = "http://localhost:9091/SpringMVC/servlet/authenticate";
- 
+  authenticateURL = 'http://localhost:9091/SpringMVC/servlet/authenticate';
+
 
   constructor(private authhttp: HttpClient, private tokenstorage: TokenstorageService, private router: Router) {
     //this.user = new User();

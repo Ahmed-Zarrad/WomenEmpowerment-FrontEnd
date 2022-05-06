@@ -10,7 +10,7 @@ import { ApiResponse } from 'src/app/Models/api.response';
 })
 export class CharityEventService {
 
-  addEventURL="http://localhost:9091/SpringMVC/servlet/addEvent";
+  addEventURL="http://localhost:9091/SpringMVC/servlet/ajouterCharityEvent";
   retrieveallEventURL="http://localhost:9091/SpringMVC/servlet/retrieveallEvent";
   deleteEventURL="http://localhost:9091/SpringMVC/servlet";
   affectEventToClientURL:"http://localhost:9091/SpringMVC/servlet/FaireReservation";
@@ -18,16 +18,16 @@ export class CharityEventService {
 
 
   constructor(private Eventhttp: HttpClient, private router: Router) { }
- 
-  public addEvent(charityevent:CharityEvent){
-    return this.Eventhttp.post<ApiResponse>("http://localhost:9091/SpringMVC/servlet/addEvent", charityevent);
+
+  public ajouterCharityEvent(charityevent:CharityEvent){
+    return this.Eventhttp.post<ApiResponse>("http://localhost:9091/SpringMVC/servlet/ajouterCharityEvent", charityevent);
   }
 
   retrieveallEvent(): Observable<any> {
     return this.Eventhttp.get(this.retrieveallEventURL);
   }
-  deleteEvent(id: number): Observable<any> {
-    return this.Eventhttp.delete(`${this.deleteEventURL}/remove-event/${id}`, { responseType: 'text' });
+  deleteEvent(idEvent: number): Observable<any> {
+    return this.Eventhttp.delete(`${this.deleteEventURL}/deleteCharityEventById/${idEvent}`, { responseType: 'text' });
   }
   affectEventToClient(charityEvent: CharityEvent): Observable<any>  {
     return this.Eventhttp.post(this. affectEventToClientURL, charityEvent);
@@ -36,6 +36,9 @@ export class CharityEventService {
   addReservation(charityEvent: CharityEvent): Observable<any> {
     return this.Eventhttp.post(this.addReservationURL, charityEvent);
   }
-
-
+  /*
+  update(idFacture: number, value): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/${idFacture}`, value,httpOptions);
+  }
+*/
 }

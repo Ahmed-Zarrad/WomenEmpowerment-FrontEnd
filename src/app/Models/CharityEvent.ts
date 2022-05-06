@@ -1,9 +1,11 @@
 export class CharityEvent {
-    
-    id:number;
-	datee:Date ;
-	nbparticipant:number; 
-	nbplace:number ;
-	titre :string ;
-	description:string;
+
+    idEvent:number;
+
+    startDateEvent:Date ;
+    endDateEvent:Date;
+    location:string ;
+    participants :number ;
+    titleEvent:string;
+
 }

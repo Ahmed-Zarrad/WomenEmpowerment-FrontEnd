@@ -18,42 +18,54 @@
         <br>
         <br />
         <div class="raw">
-      
+
           <div class="col-md-16 login-form-1">
             <h1 class="col-5 mx-auto">Add New Event</h1>
-      
+
             <form name="form" (ngSubmit)="addevent()">
-      
+
               <div class="form-group">
-                <label>Title :</label>
-                <input type="text" name="titre" class="form-control" placeholder="Title *" [(ngModel)]="charityevent.titre" />
-              </div>
-      
-              <div class="form-group">
-                <label>Description :</label>
-                <input type="text" name="description" class="form-control" placeholder="Description"
-                       ngModele [(ngModel)]="charityevent.description" />
+                <label>TitleEvent :</label>
+                <input type="text" name="titre" class="form-control" placeholder="Title *" [(ngModel)]="charityevent.TitleEvent" />
               </div>
 
               <div class="form-group">
-                <label> Date :</label>
-                <input type="date" name="date" class="form-control" placeholder=" Date *"
-                       ngModel required [(ngModel)]="charityevent.datee" />
+                <label>Location :</label>
+                <input type="text" name="Location" class="form-control" placeholder="Location"
+                       ngModele [(ngModel)]="charityevent.Location" />
               </div>
-              
+
               <div class="form-group">
-                <label for="formFile" class="form-label">Image</label>
-                <input class="form-control" type="file" name="image" placeholder="Your Image">
+                <label> StartDateEvent :</label>
+                <input type="date" name="StartDateEvent" class="form-control" placeholder=" StartDateEvent *"
+                       ngModel required [(ngModel)]="charityevent.StartDateEvent" />
               </div>
-    
+              <div class="form-group">
+                <label> EndDateEvent :</label>
+                <input type="date" name="EndDateEvent" class="form-control" placeholder=" EndDateEvent *"
+                       ngModel required [(ngModel)]="charityevent.EndDateEvent" />
+              </div>
+
+
+
+              <div class="form-group">
+                <label  class="form-label">Participants</label>
+                <input class="form-control" type="number" name="image" placeholder="Participants">
+              </div>
+
+              <!-- <div class="form-group">
+                <label  class="form-label">Publicity</label>
+                <input class="form-control" type="checkbox" name="image" placeholder="Publicity">
+              </div> -->
+
 
               <div class="d-grid gap-5 col-3 mx-auto">
             <button   (click)="addcharityevent()" type="button" class="btn btn-success btn-lg"> Add Event </button>
           </div>
+<!--
+         // <div class="alert alert-primary">{{msg}}</div> -->
 
-          <div class="alert alert-primary">{{msg}}</div>
-      
-      </form> 
+      </form>
 
 
 
@@ -77,32 +89,32 @@
         </thead>
         <tbody>
             <tr *ngFor="let c of ListCharityEvent ">
-                
+
                 <td>
-                    <div class="p-2 d-flex flex-row align-items-center mb-2"> 
+                    <div class="p-2 d-flex flex-row align-items-center mb-2">
                         <div class="d-flex flex-column ml-2"> <span class="d-block font-weight-bold">{{c.id}}</span> </div>
                     </div>
                 </td>
-                
+
                <td>
-                    <div class="p-2 d-flex flex-row align-items-center mb-2"> 
+                    <div class="p-2 d-flex flex-row align-items-center mb-2">
                         <div class="d-flex flex-column ml-2"> <span class="d-block font-weight-bold">{{c.titre}}</span> </div>
                     </div>
                 </td>
 
                 <td>
-                    <div class="p-2 d-flex flex-row align-items-center mb-2"> 
+                    <div class="p-2 d-flex flex-row align-items-center mb-2">
                         <div class="d-flex flex-column ml-2"> <span class="d-block font-weight-bold">{{c.description}}</span> </div>
                     </div>
-                </td> 
-          
-         
+                </td>
+
+
 
  <td class="text-center"><button class="btn btn-danger btn-xs"(click)="DeleteEvent(c.id)" ><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
 
             </tr>
-            
-          
+
+
         </tbody>
     </table>
 </div>

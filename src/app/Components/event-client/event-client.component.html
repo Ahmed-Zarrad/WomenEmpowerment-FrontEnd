@@ -1,1 +1,31 @@
-<p>event-client works!</p>
+<div style="margin-top: 150px;margin-bottom: 150px;">
+  <div  class="panel-heading">
+    <h2>OUR EVENTS </h2>
+
+
+  </div>
+  <div class="panel-body">
+    <table   class="table table-striped">
+      <thead>
+        <tr>
+          <th>startDateEvent</th>
+          <th>endDateEvent </th>
+          <th> titleEvent</th>
+          <th>participants</th>
+          <th>location</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let charityevent of charityevents | async">
+          <td>{{charityevent.startDateEvent}}</td>
+          <td>{{charityevent.endDateEvent}}</td>
+          <td>{{charityevent.titleEvent}}</td>
+          <td>{{charityevent.participants}}</td>
+          <td>{{charityevent.location}}</td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

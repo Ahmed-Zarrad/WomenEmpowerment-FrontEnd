@@ -1,4 +1,6 @@
-<h3>Create Cagnotte </h3>
+
+<div style="margin-top: 150px;margin-bottom: 150px; margin-left: 600px;">
+  <h3>Create Cagnotte </h3>
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
@@ -18,4 +20,5 @@
 <div [hidden]="!submitted">
   <h4>You submitted successfully!</h4>
    <button class="btn btn-success" (click)="gotoList()">return</button>
+</div>
 </div>

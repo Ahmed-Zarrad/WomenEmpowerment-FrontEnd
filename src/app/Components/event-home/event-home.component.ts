@@ -14,12 +14,12 @@ msg = '';
 
   ngOnInit(): void {
   }
-
+/*
   Reserve(){
     this.CeS.addEvent(this.charityevent).subscribe(
       data => {
         console.log(data),
-          
+
       this.msg = 'Event is reserved';},
       (error) => {
         console.log(error);
@@ -27,7 +27,7 @@ msg = '';
 
   }
 
-
+*/
 
   }
 

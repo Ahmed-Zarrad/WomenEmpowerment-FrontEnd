@@ -1,0 +1,35 @@
+<div style="margin-top: 150px;margin-bottom: 150px;">
+  <div  class="panel-heading">
+    <h2>evnet  List</h2>
+    <button class="btn btn-success" routerLink="add" style="margin-left: 10px"  routerLinkActive="active">Add event
+
+    </button>
+  </div>
+  <div class="panel-body">
+    <table   class="table table-striped">
+      <thead>
+        <tr>
+          <th>startDateEvent</th>
+          <th>endDateEvent </th>
+          <th> titleEvent</th>
+          <th>participants</th>
+          <th>location</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let charityevent of charityevents | async">
+          <td>{{charityevent.startDateEvent}}</td>
+          <td>{{charityevent.endDateEvent}}</td>
+          <td>{{charityevent.titleEvent}}</td>
+          <td>{{charityevent.participants}}</td>
+          <td>{{charityevent.location}}</td>
+          <td><button (click)="deleteEvent(charityevent.idEvent)" class="btn btn-danger">Delete</button>
+              <button (click)="updateEvent(charityevent.idEvent)" class="btn btn-info" style="margin-left: 10px">Update</button>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

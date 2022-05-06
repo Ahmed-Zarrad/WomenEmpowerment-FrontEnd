@@ -76,9 +76,22 @@ import { CommentStatsComponent } from './Components/comment-stats/comment-stats.
 import { PdfComponent } from './Components/pdf/pdf.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { SortedComponentComponent } from './Components/sorted-component/sorted-component.component';
+import { CreateOfferComponent } from './Components/create-offer/create-offer.component';
+import { CandidatListComponent } from './Components/candidat-list/candidat-list.component';
+import { CreateCandidatComponent } from './Components/create-candidat/create-candidat.component';
+import { UpdateCandidatComponent } from './Components/update-candidat/update-candidat.component';
+import { CandidatDetailsComponent } from './Components/candidat-details/candidat-details.component';
+import { OffersListComponent } from './Components/offers-list/offers-list.component';
+import { OfferDetailsComponent } from './Components/offer-details/offer-details.component';
 import { CagnotteListComponent } from './Components/cagnotte-list/cagnotte-list.component';
 import { CreateCagnotteComponent } from './Components/create-cagnotte/create-cagnotte.component';
 import { UpdateCagnotteComponent } from './Components/update-cagnotte/update-cagnotte.component';
+import { EventListComponent } from './event-list/event-list.component';
+import { CreateEventComponent } from './create-event/create-event.component';
+import { UpdateEventComponent } from './update-event/update-event.component';
+
+
+
 
 
 
@@ -152,36 +165,49 @@ import { UpdateCagnotteComponent } from './Components/update-cagnotte/update-cag
     ProductsViewComponent,
     PdfComponent,
     SortedComponentComponent,
+    CandidatListComponent,
+    CreateCandidatComponent,
+    UpdateCandidatComponent,
+    CandidatDetailsComponent,
+    CreateOfferComponent,
+    OffersListComponent,
+    OfferDetailsComponent,
     CagnotteListComponent,
     CreateCagnotteComponent,
     UpdateCagnotteComponent,
+    EventListComponent,
+    CreateEventComponent,
+    UpdateEventComponent,
+
+
   ],
 
   imports: [
     BrowserModule,
+
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
     NgxCaptchaModule,
     HttpClientModule,
-    //HttpClientXsrfModule.withOptions({ cookieName: 'XSRF-TOKEN' }),
+    // HttpClientXsrfModule.withOptions({ cookieName: 'XSRF-TOKEN' }),
     BrowserAnimationsModule,
     NgbModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     NgxStripeModule.forRoot('pk_test_51IziEXDGIe2QH5KPbwRWzkIgPxzHWJ21nzT9LMZdb01c5xNMDu8B1Vww6Z5Y60HVIfJPhdUU9D3J1VLN06mnBYvS00HUQItxxq'),
     TranslateModule.forRoot({
-      defaultLanguage:'en',
-      loader:{
-        provide:TranslateLoader,
-        useFactory:createTranslateLoader,
-        deps:[HttpClient]
-        
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient]
+
       }
     }
-      
+
     )
-    
+
 
   ],
   entryComponents: [ModalComponent],
@@ -194,6 +220,6 @@ import { UpdateCagnotteComponent } from './Components/update-cagnotte/update-cag
 export class AppModule { }
 
 export function createTranslateLoader(http:HttpClient){
-  return new TranslateHttpLoader(http,'./assets/i18n/', '.json')
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json')
 
 }

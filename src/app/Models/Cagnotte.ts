@@ -1,9 +1,9 @@
 export class Cagnotte{
 
-    idCagnotte : number;
-    nameCagnotte : string ;
-    amount : number ;
+  idCagnotte : number;
+  nameCagnotte : string ;
+  amount : number ;
 
-  filter: any;
+filter: any;
 }
 

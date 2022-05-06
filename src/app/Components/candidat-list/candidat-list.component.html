@@ -1,0 +1,25 @@
+<div style="margin-top: 150px;margin-bottom: 150px;">
+<h2 > candidatList</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> First Name</th>
+            <th> Last Name </th>
+            <th> Email Id</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let candidat of candidats" >
+            <td> {{ candidat.firstName }} </td>
+            <td> {{ candidat.lastName }} </td>
+            <td> {{ candidat.emailId }} </td>
+            <td>
+                <button (click) = "updateCandidat(candidat.id)" class = "btn btn-info"> Update</button>
+                <button (click) = "deleteCandidat(candidat.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "CandidatDetails(candidat.id)" class = "btn btn-info" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>

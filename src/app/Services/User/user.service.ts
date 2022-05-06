@@ -6,6 +6,7 @@ import { CreateAccount } from '../../Models/CreateAccount';
 import { JwtResponse } from '../../Models/JwtResponse';
 import { Role } from '../../Models/Role';
 import { User } from '../../Models/User';
+import {AddAdmin} from '../../Models/addAdmin';
 
 
 const httpOptions = {
@@ -58,8 +59,8 @@ export class UserService {
     });
   }
 
-  ajouterUser(user: User): Observable<any> {
-    return this.userhttp.post<JwtResponse>(this.ajoutUserURL, user).pipe(data => {
+  ajouterUser(addAmin: AddAdmin): Observable<any> {
+    return this.userhttp.post<JwtResponse>(this.ajoutUserURL, addAmin).pipe(data => {
       return data;
     });
   }
@@ -68,8 +69,8 @@ export class UserService {
     return this.userhttp.delete(`${this.deleteUserURL}/delete-user/${idUser}`, { responseType: 'text' });
   }
 
-  updateUser(user: User): Observable<any> {
-    return this.userhttp.put('http://localhost:9091/SpringMVC/servlet/update-user', user);
+  updateUser(us: AddAdmin): Observable<any> {
+    return this.userhttp.put('http://localhost:9091/SpringMVC/servlet/update-user', us);
   }
 
   getAllUser(): Observable<any> {

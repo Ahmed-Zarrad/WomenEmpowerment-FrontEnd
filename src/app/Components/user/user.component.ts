@@ -6,6 +6,11 @@ import { SexeType } from '../../Models/SexeType';
 import { User } from '../../Models/User';
 import { ZoneMap } from '../../Models/ZoneMap';
 import { UserService } from '../../Services/User/user.service';
+import {AddAdmin} from '../../Models/addAdmin';
+import {finalize} from 'rxjs/operators';
+import {v4 as uuidv4} from 'uuid';
+import {AngularFireStorage} from '@angular/fire/storage';
+import {FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-user',
@@ -21,6 +26,11 @@ export class UserComponent implements OnInit {
   ShowUser: boolean;
 
   nameUser: string;
+  registrationFormGroup: FormGroup;
+  imageSrc: string;
+  selectedFile: File = null;
+  downloadURL: Observable<string>;
+  firebaseLink: string;
 
 
 
@@ -36,6 +46,8 @@ export class UserComponent implements OnInit {
     var Keys = Object.keys(this.zoneType);
     return Keys;
   }
+  addAdmin: AddAdmin;
+  us: AddAdmin;
   user: User;
   usere: User;
   userf: User[];
@@ -52,7 +64,7 @@ export class UserComponent implements OnInit {
   idUser: any;
   username: string;
 
-  constructor(private route: ActivatedRoute, private userservice: UserService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private userservice: UserService, private router: Router, private storage: AngularFireStorage) { }
 
   ngOnInit(): void {
 
@@ -62,39 +74,33 @@ export class UserComponent implements OnInit {
     this.ShowAllUsers = false;
     this.ShowUser = false;
     // tslint:disable-next-line:max-line-length
-    this.user = new User(this.form.idUser, this.form.username, this.form.lastName, this.form.cinUser, this.form.password, this.form.confirmPasswordUser, this.form.stateUser, this.form.phoneNumberUser, this.form.adressUser, this.form.birthDateUser, this.form.emailUser, this.form.sexeUser, this.form.accountNonLoked, this.form.lockTime, this.form.resettoken, this.form.isBlocked, this.form.blockDate, this.form.unBlockDate, this.form.isPrivate, this.form.salaire, this.form.pointNumber, this.form.avilaibility, this.form.zone, this.form.role, this.form.fileName);
-    // tslint:disable-next-line:prefer-const
-    var startIndex =
-      this.user.fileName.indexOf('\\') >= 0
-        ? this.user.fileName.lastIndexOf('\\')
-        : this.user.fileName.lastIndexOf('/');
-    var filename = this.user.fileName.substring(startIndex);
-    if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
-      filename = filename.substring(1);
+    this.addAdmin = new AddAdmin(this.form.username, this.form.lastNameUser, this.form.cinUser, this.form.password, this.form.confirmPasswordUser, this.form.stateUser, this.form.phoneNumberUser, this.form.adressUser, this.form.birthDateUser, this.form.emailUser, this.form.sexeUser, this.form.accountNonLoked, this.form.lockTime, this.form.resettoken, this.form.isBlocked, this.form.blockDate, this.form.unBlockDate, this.form.isPrivate, this.form.salaire, this.form.pointNumber, this.form.avilaibility, this.form.zone, this.form.role, this.form.fileName);
+    if (this.form.fileName) {
+      this.userservice.getImage.next(this.form.fileName);
     }
-    this.user.fileName = filename;
-
-    this.userservice.ajouterUser(this.user).subscribe(
+    this.userservice.ajouterUser(this.addAdmin).subscribe(
       data => {
-        this.msg = 'User Adeded Succesfuly';
-        this.form = ' ';
+        console.log(data);
+        this.msg = 'Admin Added Succefully !';
+        this.form = " ";
       },
-      (error) => {
-        console.log('exception occured');
+      error => {
+        console.log("exception occured");
         this.msg = 'Email or Username Alredy Exist !';
       }
     );
   }
-  updateUser(us: User) {
+  updateUser(us: AddAdmin) {
 
     this.UpdateUser = true;
     this.AddUsers = false;
     this.DeleteUser = false;
     this.ShowAllUsers = false;
     this.ShowUser = true;
-
-    //this.username = this.user.username;
-    //this.u = new User(this.forme.idUser,this.forme.username, this.forme.lastName, this.forme.cinUser, this.forme.password, this.forme.confirmPasswordUser, this.forme.stateUser, this.forme.phoneNumberUser, this.forme.adressUser, this.forme.birthDateUser, this.forme.emailUser, this.forme.sexeUser, this.forme.accountNonLoked, this.forme.lockTime, this.forme.resettoken, this.forme.isBlocked, this.forme.blockDate, this.forme.unBlockDate, this.forme.isPrivate, this.forme.salaire, this.forme.pointNumber, this.forme.avilaibility, this.forme.zone, this.forme.role)
+    this.us = new AddAdmin(this.form.username, this.form.lastNameUser, this.form.cinUser, this.form.password, this.form.confirmPasswordUser, this.form.stateUser, this.form.phoneNumberUser, this.form.adressUser, this.form.birthDateUser, this.form.emailUser, this.form.sexeUser, this.form.accountNonLoked, this.form.lockTime, this.form.resettoken, this.form.isBlocked, this.form.blockDate, this.form.unBlockDate, this.form.isPrivate, this.form.salaire, this.form.pointNumber, this.form.avilaibility, this.form.zone, this.form.role, this.form.fileName);
+    if (this.form.fileName) {
+      this.userservice.getImage.next(this.form.fileName);
+    }
     this.userservice.updateUser(us).subscribe(
       data => {
         console.log(data),
@@ -171,5 +177,47 @@ export class UserComponent implements OnInit {
       this.showAllUsers();
     }
 
+  }
+  onFileChange(event): void {
+    const reader = new FileReader();
+
+    if (event.target.files && event.target.files.length) {
+      const [file] = event.target.files;
+      reader.readAsDataURL(file);
+
+      reader.onload = () => {
+
+        this.imageSrc = reader.result as string;
+
+        this.registrationFormGroup.patchValue({
+          fileSource: reader.result
+        });
+
+      };
+
+      const storageFile = event.target.files[0];
+      const uuid = uuidv4();
+      const filePath = `user/${this.form.username}/${uuid}`;
+      const fileRef = this.storage.ref(filePath);
+      const task = this.storage.upload(filePath, storageFile);
+      task.snapshotChanges()
+        .pipe(
+          finalize(() => {
+            this.downloadURL = fileRef.getDownloadURL();
+            this.downloadURL.subscribe(url => {
+              if (url) {
+                this.firebaseLink = url;
+                this.form.fileName = this.firebaseLink;
+              }
+            });
+
+          })
+        )
+        .subscribe(url => {
+          if (url) {
+          }
+        });
+
+    }
   }
 }

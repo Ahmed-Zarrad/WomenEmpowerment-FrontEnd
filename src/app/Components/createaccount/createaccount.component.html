@@ -114,9 +114,8 @@
 
 
           <div class="form-group">
-            <label for="formFile" class="form-label">Image</label>
-            <input class="form-control" type="file" name="image" placeholder="Your Image"
-                   ngModel [(ngModel)]="form.imageUser">
+            <label  class="form-label">Image</label>
+            <input class="form-control" id="file-input" type="file" name="file" placeholder="Your Image" (change)="onFileChange($event)">
           </div>
 
           <div class="d-grid gap-5 col-3 mx-auto">
@@ -129,6 +128,7 @@
           <br>
           <br />
           <div class="alert alert-primary" style="margin-top: 75px;">{{msg}}</div>
+          <img [src]="imageSrc" *ngIf="imageSrc" style="height: 200px; width:400px">
         </div>
       </form>
     </div>

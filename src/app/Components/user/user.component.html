@@ -221,9 +221,8 @@
           </div>
 
           <div class="form-group">
-            <label for="formFile" class="form-label">Image</label>
-            <input class="form-control" type="file" name="image" placeholder="Your Image"
-                   ngModel [(ngModel)]="form.fileName">
+            <label  class="form-label">Image</label>
+            <input class="form-control" id="file-input" type="file" name="file" placeholder="Your Image" (change)="onFileChange($event)">
           </div>
 
           <div class="d-grid gap-5 col-3 mx-auto">
@@ -304,7 +303,7 @@
   <div class="container login-container" *ngIf="ShowUser" >
     <div class="col-md-16 login-form-1">
       <h3 class="col-5 mx-auto">UPDATE THIS USER</h3>
-      <form name="forme" #up="ngForm" (ngSubmit)="updateUser()">
+      <form name="forme" #up="ngForm" (ngSubmit)="updateUser(us)">
         <div class="form-group">
           <label>Id User :</label>
           <input  value="{{user.idUser}}" class="form-control" ngModel #id="ngModel" [(ngModel)]="forme.idUser" />
@@ -374,7 +373,7 @@
 
       </form>
       <div class="d-grid gap-5 col-3 mx-auto">
-        <input type="submit" (click)="updateUser(user.username,user.lastNameUser,user.cinUser,user.password,user.stateUser,user.phoneNumberUser,user.adressUser,user.birthDateUser,user.emailUser,user.sexeUser)" class="btn btn-success btn-lg" value="Update" />
+        <input type="submit" (click)="updateUser(us)" class="btn btn-success btn-lg" value="Update" />
       </div>
       <br>
       <br />

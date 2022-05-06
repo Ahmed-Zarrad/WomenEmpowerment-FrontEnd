@@ -41,6 +41,8 @@ export class HeaderComponent implements OnInit {
         response => {
           this.u = response;
           this.userservice.getImage.next(this.u.fileName);
+          if (this.fileName == null){
+            this.fileName = '/assets/images/placeholder.png';}
         });
 
     }
@@ -52,6 +54,9 @@ export class HeaderComponent implements OnInit {
         response => {
           this.u = response;
           this.userservice.getImage.next(this.u.fileName);
+          if (this.fileName == null){
+            this.fileName = '/assets/images/placeholder.png';
+          }
         });
 
     }

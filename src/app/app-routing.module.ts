@@ -63,7 +63,7 @@ import { UpdateCandidatComponent } from './Components/update-candidat/update-can
 import { CandidatDetailsComponent } from './Components/candidat-details/candidat-details.component';
 import { OffersListComponent } from './Components/offers-list/offers-list.component';
 import { OfferDetailsComponent } from './Components/offer-details/offer-details.component';
-
+import { SchedulerComponent } from './Components/scheduler/scheduler.component';
 
 
 
@@ -124,6 +124,7 @@ const routes: Routes = [
   { path: 'client/delivery', component: DeliveryClientComponent, canActivate: [AuthorizeclientguardService] },
   {path: 'create-candidat', component: CreateCandidatComponent, canActivate: [AuthorizeclientguardService]},
   {path: 'update-candidat/:id', component: UpdateCandidatComponent, canActivate: [AuthorizeclientguardService]},
+  {path: 'scheduler', component: SchedulerComponent},
   { path: 'pdf', component: PdfComponent },
   { path: 'deliveryperson', component: EsapaceDeliveryPersonComponent, canActivate: [AuthorizedeliverymenguardService] },
   { path: 'deliveryperson/delivery', component: DeliveryDeliveryPersonComponent, canActivate: [AuthorizedeliverymenguardService]},

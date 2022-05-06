@@ -83,6 +83,12 @@ import { UpdateCandidatComponent } from './Components/update-candidat/update-can
 import { CandidatDetailsComponent } from './Components/candidat-details/candidat-details.component';
 import { OffersListComponent } from './Components/offers-list/offers-list.component';
 import { OfferDetailsComponent } from './Components/offer-details/offer-details.component';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import {environment} from 'src/environments/environment';
+import {SchedulerModule} from './Components/scheduler/scheduler.module';
 
 
 
@@ -178,7 +184,12 @@ import { OfferDetailsComponent } from './Components/offer-details/offer-details.
     // HttpClientXsrfModule.withOptions({ cookieName: 'XSRF-TOKEN' }),
     BrowserAnimationsModule,
     NgbModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
     BrowserAnimationsModule,
+    SchedulerModule,
     ToastrModule.forRoot(),
     NgxStripeModule.forRoot('pk_test_51IziEXDGIe2QH5KPbwRWzkIgPxzHWJ21nzT9LMZdb01c5xNMDu8B1Vww6Z5Y60HVIfJPhdUU9D3J1VLN06mnBYvS00HUQItxxq'),
     TranslateModule.forRoot({

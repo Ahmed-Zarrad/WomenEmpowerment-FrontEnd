@@ -46,7 +46,7 @@ export class UserService {
   getMaxSalaireUserURL = 'http://localhost:9091/SpringMVC/servlet/max-salaire';
   getMinAgeUserURL = 'http://localhost:9091/SpringMVC/servlet/min-age';
 
-  public getImage = new Subject<string>();
+  public getImage = new Subject<string>();""
 
   constructor(private userhttp: HttpClient, private router: Router) {
   }
@@ -174,5 +174,10 @@ export class UserService {
   updatePassword(email: string, password: string, confirmPassword: string) {
     // tslint:disable-next-line:max-line-length
     return this.userhttp.put('http://localhost:9091/SpringMVC/servlet/updatepassword/' + email + '/' + password + '/' + confirmPassword, { responseType: 'text' });
+  }
+
+  retrieveClientByCount(): Observable<any>
+  {
+    return this.userhttp.get('http://localhost:9091/SpringMVC/servlet/count-user/');
   }
 }

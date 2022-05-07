@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject } from '../../Models/Subject';
 import { SubjectService } from '../../Services/Subject/subject.service';
+import {UserService} from '../../Services/User/user.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-statistic-administrator',
@@ -9,11 +12,15 @@ import { SubjectService } from '../../Services/Subject/subject.service';
 })
 export class StatisticAdministratorComponent implements OnInit {
   subject: Subject;
-  constructor(private subjectservice: SubjectService) { }
+  numi: number;
+  constructor(private subjectservice: SubjectService, private userService: UserService,  private router: Router) { }
 
 
   ngOnInit(): void {
-    
+    this.userService.retrieveClientByCount().subscribe(num => {console.log(num);
+                                                               this.numi = num;
+    });
+alert(this.numi);
   }
 
   getsubjectstars() {

@@ -1,3 +1,4 @@
+<div style="margin-top: 150px; margin-bottom: 150px; margin-left: 150px;">
 <h3>Add Claim</h3>
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
@@ -11,7 +12,8 @@
       <input type="text" class="form-control" required placeholder="Description Claim" id="descriptionClaim" required [(ngModel)]="claim.descriptionClaim" name="descriptionClaim">
     </div>
 
-  
+
+
 
     <div class="form-group">
       <label for="name">Date Claim</label>
@@ -25,4 +27,5 @@
 
 <div [hidden]="!submitted">
   <h4>You added successfully!</h4>
+</div>
 </div>

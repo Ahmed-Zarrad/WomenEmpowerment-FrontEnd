@@ -3,7 +3,7 @@
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="name">Title</label>
+      <label for="titleClaim">Title</label>
       <input type="text" class="form-control" required placeholder="Title Claim" id="titleClaim" required [(ngModel)]="claim.titleClaim" name="titleClaim">
     </div>
 
@@ -16,7 +16,7 @@
 
 
     <div class="form-group">
-      <label for="name">Date Claim</label>
+      <label for="">Date Claim</label>
       <input type="date" class="form-control" id="dateClaim" required [(ngModel)]="claim.dateClaim" name="dateClaim">
     </div>
 

@@ -1,11 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { CreateAccount } from '../../Models/CreateAccount';
 import { JwtResponse } from '../../Models/JwtResponse';
 import { Role } from '../../Models/Role';
 import { User } from '../../Models/User';
+import {AddAdmin} from '../../Models/addAdmin';
+
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -44,6 +46,8 @@ export class UserService {
   getMaxSalaireUserURL = 'http://localhost:9091/SpringMVC/servlet/max-salaire';
   getMinAgeUserURL = 'http://localhost:9091/SpringMVC/servlet/min-age';
 
+  public getImage = new Subject<string>();""
+
   constructor(private userhttp: HttpClient, private router: Router) {
   }
 
@@ -55,8 +59,8 @@ export class UserService {
     });
   }
 
-  ajouterUser(user: User): Observable<any> {
-    return this.userhttp.post<JwtResponse>(this.ajoutUserURL, user).pipe(data => {
+  ajouterUser(addAmin: AddAdmin): Observable<any> {
+    return this.userhttp.post<JwtResponse>(this.ajoutUserURL, addAmin).pipe(data => {
       return data;
     });
   }
@@ -65,8 +69,8 @@ export class UserService {
     return this.userhttp.delete(`${this.deleteUserURL}/delete-user/${idUser}`, { responseType: 'text' });
   }
 
-  updateUser(user: User): Observable<any> {
-    return this.userhttp.put('http://localhost:9091/SpringMVC/servlet/update-user', user);
+  updateUser(us: AddAdmin): Observable<any> {
+    return this.userhttp.put('http://localhost:9091/SpringMVC/servlet/update-user', us);
   }
 
   getAllUser(): Observable<any> {
@@ -170,5 +174,10 @@ export class UserService {
   updatePassword(email: string, password: string, confirmPassword: string) {
     // tslint:disable-next-line:max-line-length
     return this.userhttp.put('http://localhost:9091/SpringMVC/servlet/updatepassword/' + email + '/' + password + '/' + confirmPassword, { responseType: 'text' });
+  }
+
+  retrieveClientByCount(): Observable<any>
+  {
+    return this.userhttp.get('http://localhost:9091/SpringMVC/servlet/count-user/');
   }
 }

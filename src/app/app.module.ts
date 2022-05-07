@@ -76,6 +76,20 @@ import { CommentStatsComponent } from './Components/comment-stats/comment-stats.
 import { PdfComponent } from './Components/pdf/pdf.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { SortedComponentComponent } from './Components/sorted-component/sorted-component.component';
+import { CreateOfferComponent } from './Components/create-offer/create-offer.component';
+import { CandidatListComponent } from './Components/candidat-list/candidat-list.component';
+import { CreateCandidatComponent } from './Components/create-candidat/create-candidat.component';
+import { UpdateCandidatComponent } from './Components/update-candidat/update-candidat.component';
+import { CandidatDetailsComponent } from './Components/candidat-details/candidat-details.component';
+import { OffersListComponent } from './Components/offers-list/offers-list.component';
+import { OfferDetailsComponent } from './Components/offer-details/offer-details.component';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import {environment} from 'src/environments/environment';
+import {SchedulerModule} from './Components/scheduler/scheduler.module';
+
 
 
 
@@ -150,7 +164,14 @@ import { SortedComponentComponent } from './Components/sorted-component/sorted-c
     ProductsViewComponent,
     PdfComponent,
     SortedComponentComponent,
-    
+    CandidatListComponent,
+    CreateCandidatComponent,
+    UpdateCandidatComponent,
+    CandidatDetailsComponent,
+    CreateOfferComponent,
+    OffersListComponent,
+    OfferDetailsComponent,
+
   ],
 
   imports: [
@@ -160,24 +181,29 @@ import { SortedComponentComponent } from './Components/sorted-component/sorted-c
     FormsModule,
     NgxCaptchaModule,
     HttpClientModule,
-    //HttpClientXsrfModule.withOptions({ cookieName: 'XSRF-TOKEN' }),
+    // HttpClientXsrfModule.withOptions({ cookieName: 'XSRF-TOKEN' }),
     BrowserAnimationsModule,
     NgbModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
     BrowserAnimationsModule,
+    SchedulerModule,
     ToastrModule.forRoot(),
     NgxStripeModule.forRoot('pk_test_51IziEXDGIe2QH5KPbwRWzkIgPxzHWJ21nzT9LMZdb01c5xNMDu8B1Vww6Z5Y60HVIfJPhdUU9D3J1VLN06mnBYvS00HUQItxxq'),
     TranslateModule.forRoot({
-      defaultLanguage:'en',
-      loader:{
-        provide:TranslateLoader,
-        useFactory:createTranslateLoader,
-        deps:[HttpClient]
-        
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient]
+
       }
     }
-      
+
     )
-    
+
 
   ],
   entryComponents: [ModalComponent],
@@ -190,6 +216,6 @@ import { SortedComponentComponent } from './Components/sorted-component/sorted-c
 export class AppModule { }
 
 export function createTranslateLoader(http:HttpClient){
-  return new TranslateHttpLoader(http,'./assets/i18n/', '.json')
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json')
 
 }

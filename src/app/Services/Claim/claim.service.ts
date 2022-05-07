@@ -9,11 +9,11 @@ import { Observable } from 'rxjs';
 })
 export class ClaimService {
 
-addClaimURL="http://localhost:9091/SpringMVC/servlet/Claim/addClaim";
-retreiveAllClaimsURL="http://localhost:9091/SpringMVC/servlet/Claim/retrieveAllClaims";
-retreiveClaimURL="http://localhost:9091/SpringMVC/servlet/Claim";
-updateClaimURL="http://localhost:9091/SpringMVC/servlet/Claim/updateClaim";
-DeleteClaimURL="http://localhost:9091/SpringMVC/servlet/Claim";
+addClaimURL="http://localhost:9091/SpringMVC/servlet/add-claim";
+retreiveAllClaimsURL="http://localhost:9091/SpringMVC/servlet/retrieve-all-claims";
+retreiveClaimURL="http://localhost:9091/SpringMVC/servlet/retrieve-claim";
+updateClaimURL="http://localhost:9091/SpringMVC/servlet/modify-claim";
+DeleteClaimURL="http://localhost:9091/SpringMVC/servlet";
 
 
   constructor(private claimhttp: HttpClient, private router: Router) { }

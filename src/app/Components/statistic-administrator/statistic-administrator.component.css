@@ -35,3 +35,24 @@ body {
   border-radius: 0px;
   padding-left: 0px
 }
+block {
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+  text-align: center;
+  background-color: green;
+  color: black;
+
+}
+
+/* Provide styling for when mouse will move over the counter*/
+.block:hover {
+  transform: scale(1.1);
+  background-color: brown;
+  transition-duration: 2s;
+  color: red;
+}
+
+.fa {
+  font-size: 50px;
+}
